@@ -1,7 +1,8 @@
 //document.getElementById('date').innerHTML = new Date().toDateString();
 function emailjs() {
     var numberOrContactVariable = document.getElementById("numberOrContact").value;
-    alert(numberOrContactVariable);
+    alert(numberOrContactVariable + " I WANT CAKE");
+    alert("PLEASE GIVE ME CAKE");
     alert(document.getElementById("victimsCarrier").value);
     
     /*'
