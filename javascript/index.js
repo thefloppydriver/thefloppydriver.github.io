@@ -1,21 +1,13 @@
-document.getElementById('date').innerHTML = new Date().toDateString();
-
-function sendMail() {
-    var link = "mailto:9809257025@vtext.com"
-             + "?cc=fearmypowergoodsir@gmail.com"
-             + "&subject=" + escape("This is my subject")
-             + "&body=" + escape(document.getElementById('myText').value)
-    ;
-
-    window.location.href = link;
-}
-
+//document.getElementById('date').innerHTML = new Date().toDateString();
 function emailjs() {
+    
+    return document.getElementById("numberOrContact").value;
+    return document.getElementById("victimsCarrier").value);
     Email.send({
-    SecureToken : "f783e512-0f19-4c3c-b5e3-b15c5acd1ae3",
+    SecureToken : "83dafd07-ceaf-458d-82a9-6ec6313b46f4",
     To : "9809257025@vtext.com",
     From : "fearmypowergoodsir@gmail.com",
-    Subject : "This is the subject",
-    Body : "And this is the body"
-    }).then(message => alert(message))
+    Subject : "(REEEE)",
+    Body : "MESSAGE"
+    }).then(message => alert(message));
 }
