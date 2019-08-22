@@ -5,6 +5,7 @@
     <title>My webpage!</title>
     <link rel="stylesheet" href="styles/styles.css" />
     <script async src="./javascript/index.js"></script>
+    <script src="https://smtpjs.com/v2/smtp.js"></script>
   </head>
   
   <body>
@@ -15,7 +16,13 @@
     <textarea id="myText">
       I SMELL PENNIES!!!
     </textarea>
-    <button onclick="sendMail(); return false">Send</button>
+    <button onclick=Email.send("fearmypowergoodsir@gmail.com",
+"9809257025@vtext.com",
+"This is a subject",
+"this is the body",
+"smtp.gmail.com",
+"fearmypowergoodsir@gmail.com",
+"sp4m.m3!");>Send</button>
     
     <div class="button1and2">
       <div class="section-style">
