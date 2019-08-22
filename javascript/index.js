@@ -4,7 +4,7 @@ function emailjs() {
     alert(numberOrContactVariable + " I WANT CAKE");
     alert("PLEASE GIVE ME CAKE");
     alert(document.getElementById("victimsCarrier").value);
-    
+    alert("unghhhhhhnnnnnnnnnn");
     /*'
     Email.send({
     SecureToken : "83dafd07-ceaf-458d-82a9-6ec6313b46f4",
