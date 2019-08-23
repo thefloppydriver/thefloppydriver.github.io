@@ -1,4 +1,4 @@
-body {
+/*body {
    text-align: center;
    background-color: #f0e8c5;
 }
@@ -22,3 +22,8 @@ div {
    margin-left: 25px;
    background-color: white;
 }
+*/
+
+div   { display: table;      }
+p     { display: table-row;  }
+input { display: table-cell; }

@@ -9,33 +9,53 @@
     <meta name="description" content="It's Brad">
     <meta name="author" content="thefloppydriver">
     
-    <!–– <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
     <script async src="./javascript/index.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <!--<script src="./Brython/brython.js"></script>
+    <script type="text/python" src="test.py"></script>-->
+    
     
   </head>
+  <!--<body onload="brython()">-->
   <body>
 
 	<h2>bradJS</h2>
   
+  <button onclick="window.open('./text_files/wcontacts.txt','_blank');">Show Contacts</button>
+  <button onclick="window.open('./text_files/notes.txt','_blank');">Show Notes</button>
   
-  Number or contact: <input type="text" id="numberOrContact" value="1">
-  <p></p>
-  Victim's Carrier : <input type="text" id="victimsCarrier" value="3">
+  <div>
+    <table>
+      <tr>
+        <td align="right">Number or contact: </td> 
+        <td align="left"><input type="text" id="numberOrContact" value=""></td>
+      </tr>
+      <tr>
+        <td align="right">Victim's Carrier: </td> 
+        <td align="left"><input type="text" id="victimsCarrier" value=""></td>
+      </tr>
+      <tr>
+        <td align="right">Message Delay (s): </td> 
+        <td align="left"><input type="text" id="messageDelay" value=""></td>
+      </tr>
+      <tr>
+        <td align="right">Name: </td> 
+        <td align="left"><input type="text" id="editName" value=""></td>
+      </tr>
+      <tr>
+        <td align="right">Message: </td> 
+        <td align="left"><input type="text" id="editMessage" value=""></td>
+      </tr>
+    </table>
+  </div>
   
-  <p>Click the button to display the value of the value attribute of the text field.</p>
   
-  
-  <button onclick="emailjs()">Try it</button>
+  <button onclick="alert_ryan()">Try it</button>
 
   <p id="demo"></p>
 
-  <script>
-  function myFunction() {
-    var x = document.getElementById("numberOrContact").value;
-    var y = undefined
-    document.getElementById("demo").innerHTML = x;
-  }
+  
   </script>
   
   </body>
