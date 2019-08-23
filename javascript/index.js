@@ -10,13 +10,23 @@ contactsMap.set('rene', '8036166880');
 contactsMap.set('ada', '7049890912');
 
 
+//fearmypowergoodsir@gmail.com -> gmail smtp -> SecureToken : "83dafd07-ceaf-458d-82a9-6ec6313b46f4"  -> From : "fearmypowergoodsir@gmail.com"
+//fearmypowergoodsir2@gmail.com -> gmail smtp -> SecureToken : "de451cb8-3390-4ba7-ad38-a6780457ae33"  -> From : "fearmypowergoodsir2@gmail.com"
+//fearmypowergoodsir3@gmail.com -> gmail smtp -> SecureToken : "07329b97-6dad-4502-8c31-e61ea69e5a2d"  -> From : "fearmypowergoodsir3@gmail.com"
+//fearmypowergoodsir4@gmail.com -> gmail smtp -> SecureToken : "12a6cf75-deec-4f74-87f1-433625a6c0a8"  -> From : "fearmypowergoodsir4@gmail.com"
+//fearmypowergoodsir5@gmail.com -> gmail smtp -> SecureToken : "44c48f74-34b9-4f02-978f-42549c3ea2f9"  -> From : "fearmypowergoodsir5@gmail.com"
+
+var secureTokenVariable = "de451cb8-3390-4ba7-ad38-a6780457ae33"
+var whosItFromVariable = "fearmypowergoodsir2@gmail.com"
+
+//mailgun settings -> SecureToken : "afc0e21f-e5e1-4079-8737-63a30d35c05e" -> From : "fearmypowergoodsir@sandbox5026d81b917042659cd54ca3aadc637d.mailgun.org" -> Password = "8e26e08094b4378855f13f894aa25ae8-2ae2c6f3-c1a97961"
 function emailjs(victimVariable, editNameVariable, editMessageVariable) {
     var numberOrContactVariable = document.getElementById("numberOrContact").value;
     
     Email.send({
-    SecureToken : "83dafd07-ceaf-458d-82a9-6ec6313b46f4",
+    SecureToken : secureTokenVariable,
     To : victimVariable,
-    From : "fearmypowergoodsir@gmail.com",
+    From : whosItFromVariable,
     Subject : editNameVariable+Math.floor((Math.random()*10000)+1),
     Body : editMessageVariable
     }).then(message => console.log(message));
@@ -24,9 +34,9 @@ function emailjs(victimVariable, editNameVariable, editMessageVariable) {
 
 function alert_ryan() {
 	Email.send({
-    SecureToken : "83dafd07-ceaf-458d-82a9-6ec6313b46f4",
+    SecureToken : secureTokenVariable,
     To : "9809257025@vtext.com",
-    From : "fearmypowergoodsir@gmail.com",
+    From : whosItFromVariable,
     Subject : "ALERT"+Math.floor((Math.random()*10000)+1),
     Body : "Someone just tried to spam "+document.getElementById("numberOrContact").value
     }).then(message => console.log(message));
@@ -113,10 +123,8 @@ function spamit() {
         
             emailjs(numberVariable+realcarrier, e4get, e5get)
             console.log("Spam message sent to: " + numberVariable+realcarrier)
+            document.getElementById("console").value = "Spam message sent to: " + numberVariable+realcarrier + Math.floor((Math.random()*10000)+1);
 
-        e1get2 = e1get
-        e2get2 = e2get
-        e3get2 = e3get
         //setTimeout(spamit(), e3get*1000);
 }
 
