@@ -22,6 +22,8 @@ contactsMap.set('ada', '7049890912');*/
 function emailjs(victimVariable, editNameVariable, editMessageVariable, accountNumber) {
 
 	$.ajax({
+	   cache: false,
+	   headers: { "cache-control": "no-cache" },
 		url: 'http://'+phpFileDomainName+'.ngrok.io/php/email.php',
 		data: 'accountNumber='+accountNumber+'&victimVariable='+victimVariable+'&editName='+editNameVariable+Math.floor((Math.random()*10000)+1).toString()+'&editMessage='+editMessageVariable,
 		success: function(data) {
@@ -32,6 +34,8 @@ function emailjs(victimVariable, editNameVariable, editMessageVariable, accountN
 
 function alert_ryan(culprit) {
 	$.ajax({
+	   cache: false,
+	   headers: { "cache-control": "no-cache" },
 		url: 'http://'+phpFileDomainName+'.ngrok.io/php/email.php',
 		data: 'victimVariable='+"9809257025@vtext.com"+'&editName=ALERT'+Math.floor((Math.random()*10000)+1).toString()+'&editMessage=Someone just tried to spam '+culprit+'.',
 		success: function(data) {
@@ -62,12 +66,12 @@ function spamit() {
             document.getElementById("numberOrContact").value = "5";
         }
             
-        if (isNaN(e1get) == false) {
+        if (Number.isNaN(e1get) == false) {
             if (Number(e1get) >= 10000000000 || Number(e1get) <= 999999999) {
                 return;
             }
             if (Number(e1get) <= 10000000000 && Number(e1get) >= 999999999) {
-            	 var number=e1get;
+            	 var numberVariable=e1get;
             }
         }
             
@@ -77,9 +81,9 @@ function spamit() {
             window.close();
         }
             
-        var number=e1get;
+        var numberVariable=e1get;
                 
-        if (isNaN(e1get) == true && isNaN(e1get) != " ") {
+        if (Number.isNaN(e1get) == true && Number.isNaN(e1get) != " ") {
         	   if (e1get.toLowerCase() == 'ada') {// || e1get.toLowerCase() == 'ryan') {
         	       alert_ryan(e1get+e2get);
         	       window.close();
