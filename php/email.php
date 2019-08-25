@@ -1,4 +1,4 @@
-<?php header('Access-Control-Allow-Origin:*');
+<?php header('Access-Control-Allow-Origin:github.io');
    
    use PHPMailer\PHPMailer\PHPMailer;
    use PHPMailer\PHPMailer\Exception;
