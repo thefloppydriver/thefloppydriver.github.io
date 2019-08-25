@@ -1,9 +1,0 @@
-var contactsMap = new Map();
-contactsMap.set('jomar', '2163198688');
-contactsMap.set('jaden', '8032432431');
-contactsMap.set('kendall', '8034934103');
-contactsMap.set('kylee', '9999999999');
-contactsMap.set('ryan', '9809257025');
-contactsMap.set('gracee', '8035041480');
-contactsMap.set('rene', '8036166880');
-contactsMap.set('ada', '7049890912');

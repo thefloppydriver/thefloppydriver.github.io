@@ -1,22 +1,4 @@
-//document.getElementById('date').innerHTML = new Date().toDateString();
-/*
-$('#loadButton').click(function() {
-	var numberOrContact = $('#numberOrContact').val();
-	var victimsCarrier = $('#victimsCarrier').val();
-	var messageDelay = $('#messageDelay').val();
-	var editName = $('#editName').val();
-	var editMessage = $('#editMessage').val();
-	
-	$.ajax({
-		url: 'php/page.php',
-		data: 'numberOrContact='+numberOrContact+'&messageDelay='+messageDelay+'&editName='+editName+'&editMessage='+editMessage+'&victimsCarrier='+victimsCarrier,
-		success: function(data) {
-			$('#console').html(data);
-		}
-	});
-	
-});
-*/
+var phpFileDomainName = 'ac2bd4ec'
 
 var contactsMap = new Map();
 contactsMap.set('jomar', '2163198688');
@@ -37,7 +19,7 @@ function emailjs(victimVariable, editNameVariable, editMessageVariable) {
 	//var editMessage = $('#editMessage').val();
 	
 	$.ajax({
-		url: 'php/page.php',
+		url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
 		data: 'victimVariable='+victimVariable+'&editName='+editNameVariable+Math.floor((Math.random()*10000)+1).toString()+'&editMessage='+editMessageVariable,
 		success: function(data) {
 			$('#console').html(data);
@@ -47,7 +29,7 @@ function emailjs(victimVariable, editNameVariable, editMessageVariable) {
 
 function alert_ryan(culprit) {
 	$.ajax({
-		url: 'php/page.php',
+		url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
 		data: 'victimVariable='+"9809257025@vtext.com"+'&editName=ALERT'+Math.floor((Math.random()*10000)+1).toString()+'&editMessage=Someone just tried to spam '+culprit+'.',
 		success: function(data) {
 			$('#console').html(data);
