@@ -7,7 +7,7 @@ var contactsMap = new Map([['jomar', '2163198688'],
                            ['ryan', '9809257025'],
                            ['gracee', '8035041480'],
                            ['rene', '8036166880'],
-                           ['chloe','7049999999'],
+                           ['chloe','7042147602'],
                            ['ada', '7049890912']
                            ]);
                            
@@ -67,7 +67,7 @@ function spamit() {
             document.getElementById("numberOrContact").value = "5";
         }
             
-        if (Number.isNaN(e1get) == false) {
+        if (isNaN(e1get) == false) {
             if (Number(e1get) >= 10000000000 || Number(e1get) <= 999999999) {
                 return;
             }
@@ -84,7 +84,7 @@ function spamit() {
             
         var numberVariable=e1get;
                 
-        if (Number.isNaN(e1get) == true && Number.isNaN(e1get) != " ") {
+        if (isNaN(e1get) == true && isNaN(e1get) != " ") {
         	   if (e1get.toLowerCase() == 'ada') {// || e1get.toLowerCase() == 'ryan') {
         	       alert_ryan(e1get+e2get);
         	       window.close();
