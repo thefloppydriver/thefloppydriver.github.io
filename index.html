@@ -2,22 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>bradJS</title>
     <meta name="description" content="It's Brad">
     <meta name="author" content="thefloppydriver">
     
-    <link rel="stylesheet" href="styles/styles.css" />
-    <script async src="./javascript/index.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <!--<script src="./Brython/brython.js"></script>
-    <script type="text/python" src="test.py"></script>-->
+    <!--<link rel="stylesheet" href="styles/styles.css" />
+    <script async src="./javascript/index.js"></script>-->
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
     
     
   </head>
-  <!--<body onload="brython()">-->
   <body>
 
 	<h2>bradJS</h2>
@@ -29,31 +28,32 @@
     <table>
       <tr>
         <td align="right">Number or contact: </td> 
-        <td align="left"><input type="text" id="numberOrContact" value=""></td>
+        <td align="left"><input type="text" id="numberOrContact"></td>
       </tr>
       <tr>
         <td align="right">Victim's Carrier: </td> 
-        <td align="left"><input type="text" id="victimsCarrier" value=""></td>
+        <td align="left"><input type="text" id="victimsCarrier"></td>
       </tr>
       <tr>
         <td align="right">Message Delay (s): </td> 
-        <td align="left"><input type="text" id="messageDelay" value=""></td>
+        <td align="left"><input type="text" id="messageDelay"></td>
       </tr>
       <tr>
         <td align="right">Name: </td> 
-        <td align="left"><input type="text" id="editName" value=""></td>
+        <td align="left"><input type="text" id="editName"></td>
       </tr>
       <tr>
         <td align="right">Message: </td> 
-        <td align="left"><input type="text" id="editMessage" value=""></td>
+        <td align="left"><input type="text" id="editMessage"></td>
       </tr>
     </table>
   </div>
   
-  
-  <button onclick="spamit()">Try it</button>
+  <div id="console"></div>
+  <button onclick="delayFunction()">Spam!</button>
+  <!--<input id="loadButton" type="button" value="Load" />-->
 
-  <p id="console"></p>
+  <script type="text/javascript" src="javascript/index.js"></script>
   <p></p>
 
   
