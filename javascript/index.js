@@ -28,7 +28,7 @@ function emailjs(victimVariable, editNameVariable, editMessageVariable, accountN
 		url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
 		data: 'accountNumber='+accountNumber+'&victimVariable='+victimVariable+'&editName='+editNameVariable+Math.floor((Math.random()*10000)+1).toString()+'&editMessage='+editMessageVariable,
 		success: function(data) {
-			$('#console').html(data);
+			$('#console').html(' '+data+' ');
 			}
 	});
 };
@@ -40,9 +40,10 @@ function alert_ryan(culprit) {
 		url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
 		data: 'victimVariable='+"9809257025@vtext.com"+'&editName=ALERT'+Math.floor((Math.random()*10000)+1).toString()+'&editMessage=Someone just tried to spam '+culprit+'.',
 		success: function(data) {
-			$('#console').html(data);
+			$('#console').html(' '+data+' ');
 			}
 	});
+	return;
 };
 
 function spamit() {
@@ -77,7 +78,7 @@ function spamit() {
         }
             
                                         
-        if (e1get == '7049890912') {// || e1get == '9809257025') {
+        if (e1get == '7049890912' || e1get == '9809257025') {
             alert_ryan(e1get+e2get);
             window.close();
         }
@@ -85,11 +86,11 @@ function spamit() {
         var numberVariable=e1get;
                 
         if (isNaN(e1get) == true && isNaN(e1get) != " ") {
-        	   if (e1get.toLowerCase() == 'ada') {// || e1get.toLowerCase() == 'ryan') {
+        	   if (e1get.toLowerCase() == 'ada' || e1get.toLowerCase() == 'ryan') {
         	       alert_ryan(e1get+e2get);
-        	       window.close();
+        	       return;
         	   }
-        	   if (e1get.toLowerCase() != 'ada') {//|| e1get.toLowerCase() != 'ryan') {
+        	   if (e1get.toLowerCase() != 'ada' || e1get.toLowerCase() != 'ryan') {
         	   	var numberVariable = contactsMap.get(e1get.toLowerCase());
         	   }
         }
