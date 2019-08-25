@@ -1,4 +1,4 @@
-<?php header('Access-Control-Allow-Origin: https://thefloppydriver.github.io');
+<?php header('Access-Control-Allow-Origin: *');
    
    use PHPMailer\PHPMailer\PHPMailer;
    use PHPMailer\PHPMailer\Exception;
@@ -30,17 +30,15 @@
    if (isset($_GET['accountNumber'])) {
       echo $accountNumber = $_GET['accountNumber'];
       $accountNumber = $_GET['accountNumber'];
-      if ($accountNumber == "") {
+      if ($accountNumber == '') {
          $account = array("fearmypowergoodsir@gmail.com", "sp4m.m3!");
       }
       
-      $account = array("fearmypowergoodsir"+$accountNumber+"@gmail.com", "sp4m.m3!"+$accountNumber);
+      $account = array("fearmypowergoodsir".=$accountNumber.="@gmail.com", "sp4m.m3!".=$accountNumber);
       
-      if ($accountNumber == "1") {
+      if ($accountNumber == '1') {
          $account = array("fearmypowergoodsir@gmail.com", "sp4m.m3!");
       }
-      
-      
       
       
       
