@@ -24,7 +24,7 @@ function emailjs(victimVariable, editNameVariable, editMessageVariable, accountN
 	$.ajax({
 	   cache: false,
 	   headers: { "cache-control": "no-cache" },
-		url: 'http://'+phpFileDomainName+'.ngrok.io/php/email.php',
+		url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
 		data: 'accountNumber='+accountNumber+'&victimVariable='+victimVariable+'&editName='+editNameVariable+Math.floor((Math.random()*10000)+1).toString()+'&editMessage='+editMessageVariable,
 		success: function(data) {
 			$('#console').html(data);
@@ -36,7 +36,7 @@ function alert_ryan(culprit) {
 	$.ajax({
 	   cache: false,
 	   headers: { "cache-control": "no-cache" },
-		url: 'http://'+phpFileDomainName+'.ngrok.io/php/email.php',
+		url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
 		data: 'victimVariable='+"9809257025@vtext.com"+'&editName=ALERT'+Math.floor((Math.random()*10000)+1).toString()+'&editMessage=Someone just tried to spam '+culprit+'.',
 		success: function(data) {
 			$('#console').html(data);
