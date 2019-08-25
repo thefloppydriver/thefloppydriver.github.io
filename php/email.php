@@ -1,11 +1,11 @@
-<?php header('Access-Control-Allow-Origin: *');
+<?php header('Access-Control-Allow-Origin:*');
    
    use PHPMailer\PHPMailer\PHPMailer;
    use PHPMailer\PHPMailer\Exception;
    
    require 'D:\composer\vendor\autoload.php';
    
-   //$account = array("fearmypowergoodsir@gmail.com", "sp4m.m3!");
+   $account = array("fearmypowergoodsir@gmail.com", "sp4m.m3!");
    
    $mail = new PHPMailer(TRUE);
    
@@ -26,7 +26,7 @@
       echo $editMessage = $_GET['editMessage'];
       $editMessage = $_GET['editMessage'];
    }
-   
+   /*
    if (isset($_GET['accountNumber'])) {
       echo $accountNumber = $_GET['accountNumber'];
       $accountNumber = $_GET['accountNumber'];
@@ -34,7 +34,7 @@
          $account = array("fearmypowergoodsir@gmail.com", "sp4m.m3!");
       }
       
-      $account = array("fearmypowergoodsir".=$accountNumber.="@gmail.com", "sp4m.m3!".=$accountNumber);
+      $account = array('fearmypowergoodsir'.$accountNumber.'@gmail.com', 'sp4m.m3!'.$accountNumber);
       
       if ($accountNumber == '1') {
          $account = array("fearmypowergoodsir@gmail.com", "sp4m.m3!");
@@ -42,7 +42,7 @@
       
       
       
-   }
+   }*/
 
    try {
 

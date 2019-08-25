@@ -22,7 +22,7 @@ contactsMap.set('ada', '7049890912');*/
 function emailjs(victimVariable, editNameVariable, editMessageVariable, accountNumber) {
 
 	$.ajax({
-		url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
+		url: 'http://'+phpFileDomainName+'.ngrok.io/php/email.php',
 		data: 'accountNumber='+accountNumber+'&victimVariable='+victimVariable+'&editName='+editNameVariable+Math.floor((Math.random()*10000)+1).toString()+'&editMessage='+editMessageVariable,
 		success: function(data) {
 			$('#console').html(data);
@@ -32,7 +32,7 @@ function emailjs(victimVariable, editNameVariable, editMessageVariable, accountN
 
 function alert_ryan(culprit) {
 	$.ajax({
-		url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
+		url: 'http://'+phpFileDomainName+'.ngrok.io/php/email.php',
 		data: 'victimVariable='+"9809257025@vtext.com"+'&editName=ALERT'+Math.floor((Math.random()*10000)+1).toString()+'&editMessage=Someone just tried to spam '+culprit+'.',
 		success: function(data) {
 			$('#console').html(data);
