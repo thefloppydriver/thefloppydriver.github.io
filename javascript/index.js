@@ -1,26 +1,29 @@
 var phpFileDomainName = 'ac2bd4ec'
 
-var contactsMap = new Map();
-contactsMap.set('jomar', '2163198688');
+var contactsMap = new Map([['jomar', '2163198688'],
+                           ['jaden', '8032432431'],
+                           ['kendall', '8034934103'],
+                           ['kylee', '9999999999'],
+                           ['ryan', '9809257025'],
+                           ['gracee', '8035041480'],
+                           ['rene', '8036166880'],
+                           ['ada', '7049890912']
+                           ]);
+                           
+/*contactsMap.set('jomar', '2163198688');
 contactsMap.set('jaden', '8032432431');
 contactsMap.set('kendall', '8034934103');
 contactsMap.set('kylee', '9999999999');
 contactsMap.set('ryan', '9809257025');
 contactsMap.set('gracee', '8035041480');
 contactsMap.set('rene', '8036166880');
-contactsMap.set('ada', '7049890912');
+contactsMap.set('ada', '7049890912');*/
 
-function emailjs(victimVariable, editNameVariable, editMessageVariable) {
-	//$('#loadButton').click(function() {
-	//var numberOrContact = $('#numberOrContact').val();
-	//var victimsCarrier = $('#victimsCarrier').val();
-	//var messageDelay = $('#messageDelay').val();
-	//var editName = $('#editName').val();
-	//var editMessage = $('#editMessage').val();
-	
+function emailjs(victimVariable, editNameVariable, editMessageVariable, accountNumber) {
+
 	$.ajax({
 		url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
-		data: 'victimVariable='+victimVariable+'&editName='+editNameVariable+Math.floor((Math.random()*10000)+1).toString()+'&editMessage='+editMessageVariable,
+		data: 'accountNumber='+accountNumber+'&victimVariable='+victimVariable+'&editName='+editNameVariable+Math.floor((Math.random()*10000)+1).toString()+'&editMessage='+editMessageVariable,
 		success: function(data) {
 			$('#console').html(data);
 			}
@@ -44,11 +47,7 @@ function spamit() {
         var e3get = document.getElementById("messageDelay").value;
         var e4get = document.getElementById("editName").value;
         var e5get = document.getElementById("editMessage").value;
-        //console.log("flag_spamit")
-        //console.log("e1get ==")
-        //console.log("e2get ==")
-        //console.log("e3get ==")
-        
+        var e6get = document.getElementById("accountNumber").value;
         
         if (e1get == "") {
             return;
@@ -118,7 +117,7 @@ function spamit() {
             var neat = numberVariable+realcarrier;
             var neater = "Spam message sent to: " + neat + Math.floor((Math.random()*10000)+1).toString();
             
-            emailjs(neat, e4get, e5get);
+            emailjs(neat, e4get, e5get, e6get);
             console.log("Spam message sent to: " + neat);
             document.getElementById("console").value = neater;
 
