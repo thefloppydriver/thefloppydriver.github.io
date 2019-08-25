@@ -26,7 +26,7 @@
       echo $editMessage = $_GET['editMessage'];
       $editMessage = $_GET['editMessage'];
    }
-   /*
+   
    if (isset($_GET['accountNumber'])) {
       echo $accountNumber = $_GET['accountNumber'];
       $accountNumber = $_GET['accountNumber'];
@@ -42,7 +42,7 @@
       
       
       
-   }*/
+   }
 
    try {
 
