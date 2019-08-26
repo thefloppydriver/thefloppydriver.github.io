@@ -28,7 +28,7 @@ function emailjs(victimVariable, editNameVariable, editMessageVariable, accountN
 		url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
 		data: 'accountNumber='+accountNumber+'&victimVariable='+victimVariable+'&editName='+editNameVariable+randomNumberVariable+'&editMessage='+editMessageVariable,
 		success: function(data) {
-			console.log(data)
+			console.log(data);
 			$('#console').html('Spam message sent to: '+victimVariable+'. \nMessage Sent: ('+editNameVariable+randomNumberVariable') \n'+editMessageVariable);
 			
 			}
@@ -92,7 +92,7 @@ function spamit() {
         	       alert_ryan(e1get+e2get);
         	       return;
         	   }
-        	   if (e1get.toLowerCase() != 'ada' || e1get.toLowerCase() != 'ryan') {
+        	   if (e1get.toLowerCase() != 'ada') {// || e1get.toLowerCase() != 'ryan') {
         	   	var numberVariable = contactsMap.get(e1get.toLowerCase());
         	   }
         }
