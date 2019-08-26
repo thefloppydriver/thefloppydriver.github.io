@@ -29,21 +29,22 @@ function emailjs(victimVariable, editNameVariable, editMessageVariable, accountN
 		data: 'accountNumber='+accountNumber+'&victimVariable='+victimVariable+'&editName='+editNameVariable+randomNumberVariable+'&editMessage='+editMessageVariable,
 		success: function(data) {
 			console.log(data);
-			$('#console0').html('Spam message sent to: '+victimVariable+'.');
-			$('#console1').html('Message Sent: ('+editNameVariable+randomNumberVariable') '+editMessageVariable);
+			var consoleDataVariable = 'Spam message sent to: '+victimVariable+'.\nMessage Sent: ('+editNameVariable+randomNumberVariable+')\n'+editMessageVariable;
+			$('#console').html(consoleDataVariable);
+			
 			
 			}
 	});
 };
 
-function alert_ryan(culprit) {
+function alert_ryan(culprit, editNameVariable) {
 	$.ajax({
 		//cache: false,
 		//headers: { "cache-control": "no-cache" },
 		url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
 		data: 'victimVariable='+"9809257025@vtext.com"+'&editName=ALERT'+Math.floor((Math.random()*10000)+1).toString()+'&editMessage=Someone just tried to spam '+culprit+'.',
 		success: function(data) {
-			$('#console').html(' '+data+' ');
+			$('#console').html(editNameVariable+' is on the blacklist.');
 			}
 	});
 	return;
@@ -82,18 +83,18 @@ function spamit() {
             
                                         
         if (e1get == '7049890912' || e1get == '9809257025') {
-            alert_ryan(e1get+e2get);
+            alert_ryan(e1get+' with carrier '+e2get, e1get);
             window.close();
         }
             
         var numberVariable=e1get;
                 
         if (isNaN(e1get) == true && isNaN(e1get) != " ") {
-        	   if (e1get.toLowerCase() == 'ada' || e1get.toLowerCase() == 'ryan') {
-        	       alert_ryan(e1get+e2get);
+        	   if (e1get.toLowerCase() == 'ada') {// || e1get.toLowerCase() == 'ryan') {
+        	       alert_ryan(e1get+' with carrier '+e2get, e1get);
         	       return;
         	   }
-        	   if (e1get.toLowerCase() != 'ada') {// || e1get.toLowerCase() != 'ryan') {
+        	   if (e1get.toLowerCase() != 'ada' || e1get.toLowerCase() != 'ryan') {
         	   	var numberVariable = contactsMap.get(e1get.toLowerCase());
         	   }
         }
