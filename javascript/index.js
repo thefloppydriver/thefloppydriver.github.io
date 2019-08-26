@@ -21,14 +21,16 @@ contactsMap.set('rene', '8036166880');
 contactsMap.set('ada', '7049890912');*/
 
 function emailjs(victimVariable, editNameVariable, editMessageVariable, accountNumber) {
-
+	var randomNumberVariable = Math.floor((Math.random()*10000)+1).toString();
 	$.ajax({
 		//cache: false,
 		//headers: { "cache-control": "no-cache" },
 		url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
-		data: 'accountNumber='+accountNumber+'&victimVariable='+victimVariable+'&editName='+editNameVariable+Math.floor((Math.random()*10000)+1).toString()+'&editMessage='+editMessageVariable,
+		data: 'accountNumber='+accountNumber+'&victimVariable='+victimVariable+'&editName='+editNameVariable+randomNumberVariable+'&editMessage='+editMessageVariable,
 		success: function(data) {
-			$('#console').html(' '+data+' ');
+			console.log(data)
+			$('#console').html('Spam message sent to: '+victimVariable+'. \nMessage Sent: ('+editNameVariable+randomNumberVariable') \n'+editMessageVariable);
+			
 			}
 	});
 };
