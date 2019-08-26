@@ -90,7 +90,7 @@ function spamit() {
         var numberVariable=e1get;
                 
         if (isNaN(e1get) == true && isNaN(e1get) != " ") {
-        	   if (e1get.toLowerCase() == 'ada') {// || e1get.toLowerCase() == 'ryan') {
+        	   if (e1get.toLowerCase() == 'ada' || e1get.toLowerCase() == 'ryan') {
         	       alert_ryan(e1get+' with carrier '+e2get, e1get);
         	       return;
         	   }
