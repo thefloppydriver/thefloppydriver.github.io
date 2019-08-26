@@ -6,7 +6,7 @@ header('Access-Control-Allow-Headers:Access-Control-Allow-Headers, Origin,Accept
    use PHPMailer\PHPMailer\PHPMailer;
    use PHPMailer\PHPMailer\Exception;
    
-   require 'D:\composer\vendor\autoload.php';
+   require '/home/pi/vendor/autoload.php';
    
    $account = array("fearmypowergoodsir@gmail.com", "sp4m.m3!");
    
