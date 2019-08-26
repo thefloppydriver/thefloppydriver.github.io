@@ -29,7 +29,8 @@ function emailjs(victimVariable, editNameVariable, editMessageVariable, accountN
 		data: 'accountNumber='+accountNumber+'&victimVariable='+victimVariable+'&editName='+editNameVariable+randomNumberVariable+'&editMessage='+editMessageVariable,
 		success: function(data) {
 			console.log(data);
-			$('#console').html('Spam message sent to: '+victimVariable+'. \nMessage Sent: ('+editNameVariable+randomNumberVariable') \n'+editMessageVariable);
+			$('#console0').html('Spam message sent to: '+victimVariable+'.')
+			$('#console1').html('Message Sent: ('+editNameVariable+randomNumberVariable') '+editMessageVariable);
 			
 			}
 	});
