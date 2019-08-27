@@ -25,8 +25,9 @@ function emailjs(victimVariable, editNameVariable, editMessageVariable, accountN
 	$.ajax({
 		//cache: false,
 		//headers: { "cache-control": "no-cache" },
-		url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
-		data: 'accountNumber='+accountNumber+'&victimVariable='+victimVariable+'&editName='+editNameVariable+randomNumberVariable+'&editMessage='+editMessageVariable,
+		//url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
+		url: 'http://localhost/php/email.php',
+		data: 'passToPC='+(Math.random() >= 0.5).toString()+'&accountNumber='+accountNumber+'&victimVariable='+victimVariable+'&editName='+editNameVariable+randomNumberVariable+'&editMessage='+editMessageVariable,
 		success: function(data) {
 			console.log(data);
 			var consoleDataVariable = 'Spam message sent to: '+victimVariable+'.\nMessage Sent: ('+editNameVariable+randomNumberVariable+')\n'+editMessageVariable;
@@ -41,8 +42,10 @@ function alert_ryan(culprit, editNameVariable) {
 	$.ajax({
 		//cache: false,
 		//headers: { "cache-control": "no-cache" },
-		url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
-		data: 'victimVariable='+"9809257025@vtext.com"+'&editName=ALERT'+Math.floor((Math.random()*10000)+1).toString()+'&editMessage=Someone just tried to spam '+culprit+'.',
+		//url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
+		//data: 'victimVariable='+"9809257025@vtext.com"+'&editName=ALERT'+Math.floor((Math.random()*10000)+1).toString()+'&editMessage=Someone just tried to spam '+culprit+'.',
+		url: 'http://localhost:80/php/email.php',
+		data: 'passToPC='+(Math.random() >= 0.5).toString()+'&accountNumber='+accountNumber+'&victimVariable='+victimVariable+'&editName='+editNameVariable+randomNumberVariable+'&editMessage='+editMessageVariable,
 		success: function(data) {
 			$('#console').html(editNameVariable+' is on the blacklist.');
 			}
@@ -90,7 +93,7 @@ function spamit() {
         var numberVariable=e1get;
                 
         if (isNaN(e1get) == true && isNaN(e1get) != " ") {
-        	   if (e1get.toLowerCase() == 'ada' || e1get.toLowerCase() == 'ryan') {
+        	   if (e1get.toLowerCase() == 'ada') {// || e1get.toLowerCase() == 'ryan') {
         	       alert_ryan(e1get+' with carrier '+e2get, e1get);
         	       return;
         	   }

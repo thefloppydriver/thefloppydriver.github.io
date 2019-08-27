@@ -3,19 +3,19 @@ header('Access-Control-Allow-Credentials:true');
 header('Access-Control-Allow-Methods:GET,HEAD,OPTIONS,POST,PUT');
 header('Access-Control-Allow-Headers:Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, cache-control');
    
+   use \PHPMailer\PHPMailer\PHPMailer;
+   use \PHPMailer\PHPMailer\Exception;
    
-   use PHPMailer\PHPMailer\PHPMailer;
-   use PHPMailer\PHPMailer\Exception;
-   
-   require 'D:\composer\vendor\autoload.php';
    //require '/home/pi/vendor/autoload.php';
+   require 'D:\NotProgramFiles\xampp\phpMyAdmin\vendor\autoload.php';
    
    $account = array("fearmypowergoodsir@gmail.com", "sp4m.m3!");
    
-   $mail = new PHPMailer(true);
-      
+   $mail = new PHPMailer(TRUE);
+   
+   
    if ($_GET['passToPC'] == true) {
-      fopen('http://192.168.0.7/php/email2.php?victimVariable='.$_GET['victimVariable'].'&editName='.$_GET['editName'].'&editMessage='.$_GET['editMessage'], 'r');
+        fopen('https://192.168.0.7/php/email.php?victimVariable='.$_GET['victimVariable'].'&editName='.$_GET['editName'].'&editMessage='.$_GET['editMessage'], 'r');
    }
    
    
@@ -26,7 +26,7 @@ header('Access-Control-Allow-Headers:Access-Control-Allow-Headers, Origin,Accept
       $editMessage = $_GET['editMessage'];
       $accountNumber = $_GET['accountNumber'];
       $account = array('fearmypowergoodsir'.$accountNumber.'@gmail.com', 'sp4m.m3!'.$accountNumber);
-      if ($accountNumber == ('' || '1' || '0')) {
+      if ($accountNumber == ('' || '1')) {
          $account = array("fearmypowergoodsir@gmail.com", "sp4m.m3!");
       }
       
