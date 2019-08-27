@@ -1,4 +1,4 @@
-var phpFileDomainName = 'ece9f5d1'
+var phpFileDomainName = '10a4f4c6'
 
 var contactsMap = new Map([['jomar', '2163198688'],
                            ['jaden', '8032432431'],
@@ -26,14 +26,10 @@ function emailjs(victimVariable, editNameVariable, editMessageVariable, accountN
 		//cache: false,
 		//headers: { "cache-control": "no-cache" },
 		//url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
-		url: 'http://localhost/php/email.php',
+		url: 'http://192.168.0.7/php/email.php',
 		data: 'passToPC='+(Math.random() >= 0.5).toString()+'&accountNumber='+accountNumber+'&victimVariable='+victimVariable+'&editName='+editNameVariable+randomNumberVariable+'&editMessage='+editMessageVariable,
 		success: function(data) {
-			console.log(data);
-			var consoleDataVariable = 'Spam message sent to: '+victimVariable+'.\nMessage Sent: ('+editNameVariable+randomNumberVariable+')\n'+editMessageVariable;
-			$('#console').html(consoleDataVariable);
-			
-			
+			$('#console').html('Spam message sent to: '+victimVariable+'.\nMessage Sent: ('+editNameVariable+randomNumberVariable+')\n'+editMessageVariable);
 			}
 	});
 };
@@ -44,7 +40,7 @@ function alert_ryan(culprit, editNameVariable) {
 		//headers: { "cache-control": "no-cache" },
 		//url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
 		//data: 'victimVariable='+"9809257025@vtext.com"+'&editName=ALERT'+Math.floor((Math.random()*10000)+1).toString()+'&editMessage=Someone just tried to spam '+culprit+'.',
-		url: 'http://localhost:80/php/email.php',
+		url: 'http://192.168.0.7/php/email.php',
 		data: 'passToPC='+(Math.random() >= 0.5).toString()+'&accountNumber='+accountNumber+'&victimVariable='+victimVariable+'&editName='+editNameVariable+randomNumberVariable+'&editMessage='+editMessageVariable,
 		success: function(data) {
 			$('#console').html(editNameVariable+' is on the blacklist.');

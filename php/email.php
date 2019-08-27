@@ -13,20 +13,27 @@ header('Access-Control-Allow-Headers:Access-Control-Allow-Headers, Origin,Accept
    $account = array("fearmypowergoodsir@gmail.com", "sp4m.m3!");
    
    $mail = new PHPMailer(true);
+   
+   if ($_GET['passToPC'] == "true") {
+      $curl=curl_init();
+      curl_setopt_array($curl, [
+         CURLOPT_RETURNTRANSFER => 1,
+         CURLOPT_URL => 'http://TFD-PC/php/email2.php?victimVariable='.$_GET['victimVariable'].'&editName='.$_GET['editName'].'&editMessage='.urlencode($_GET['editMessage'])
+      ]);
       
-   if ($_GET['passToPC'] == true) {
-      fopen('http://192.168.0.7/php/email2.php?victimVariable='.$_GET['victimVariable'].'&editName='.$_GET['editName'].'&editMessage='.$_GET['editMessage'], 'r');
+      curl_exec($curl);
+      curl_close($curl);
    }
    
    
    
-   if ($_GET['passToPC'] != true) {
+   if ($_GET['passToPC'] != "true") {
       $victimVariable = $_GET['victimVariable'];
       $editName = $_GET['editName'];
       $editMessage = $_GET['editMessage'];
       $accountNumber = $_GET['accountNumber'];
       $account = array('fearmypowergoodsir'.$accountNumber.'@gmail.com', 'sp4m.m3!'.$accountNumber);
-      if ($accountNumber == ('' || '1' || '0')) {
+      if ($accountNumber == '' || '1' || '0') {
          $account = array("fearmypowergoodsir@gmail.com", "sp4m.m3!");
       }
       
