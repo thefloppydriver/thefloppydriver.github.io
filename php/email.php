@@ -26,17 +26,16 @@ header('Access-Control-Allow-Headers:Access-Control-Allow-Headers, Origin,Accept
    }
    
    
-   
-   if ($_GET['passToPC'] != "true") {
+   echo $_GET['passToPC'];
+   if ($_GET['passToPC'] == "false") {
       $victimVariable = $_GET['victimVariable'];
       $editName = $_GET['editName'];
       $editMessage = $_GET['editMessage'];
       $accountNumber = $_GET['accountNumber'];
       $account = array('fearmypowergoodsir'.$accountNumber.'@gmail.com', 'sp4m.m3!'.$accountNumber);
-      if ($accountNumber == '' || '1' || '0') {
+      if ($accountNumber == '' || $accountNumber == '1' || $accountNumber == '0') {
          $account = array("fearmypowergoodsir@gmail.com", "sp4m.m3!");
       }
-      
       try {
 
          $mail->setFrom($account[0]);
@@ -70,14 +69,15 @@ header('Access-Control-Allow-Headers:Access-Control-Allow-Headers, Origin,Accept
          /* Finally send the mail. */
          $mail->send();
          }
-         catch (Exception $e)
-         {
-         echo $e->errorMessage();
-         }
-         catch (\Exception $e)
-         {
-         echo $e->getMessage();
-         }
+         
+      catch (Exception $e)
+      {
+      echo $e->errorMessage();
+      }
+      catch (\Exception $e)
+      {
+      echo $e->getMessage();
+      }
    }
 
 ?>
