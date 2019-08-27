@@ -25,8 +25,7 @@ function emailjs(victimVariable, editNameVariable, editMessageVariable, accountN
 	$.ajax({
 		//cache: false,
 		//headers: { "cache-control": "no-cache" },
-		//url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
-		url: 'http://192.168.0.7/php/email.php',
+		url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
 		data: 'passToPC='+(Math.random() >= 0.5).toString()+'&accountNumber='+accountNumber+'&victimVariable='+victimVariable+'&editName='+editNameVariable+randomNumberVariable+'&editMessage='+editMessageVariable,
 		success: function(data) {
 			$('#console').html('Spam message sent to: '+victimVariable+'.\nMessage Sent: ('+editNameVariable+randomNumberVariable+')\n'+editMessageVariable);
@@ -38,9 +37,7 @@ function alert_ryan(culprit, editNameVariable) {
 	$.ajax({
 		//cache: false,
 		//headers: { "cache-control": "no-cache" },
-		//url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
-		//data: 'victimVariable='+"9809257025@vtext.com"+'&editName=ALERT'+Math.floor((Math.random()*10000)+1).toString()+'&editMessage=Someone just tried to spam '+culprit+'.',
-		url: 'http://192.168.0.7/php/email.php',
+		url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
 		data: 'passToPC='+(Math.random() >= 0.5).toString()+'&accountNumber='+accountNumber+'&victimVariable='+victimVariable+'&editName='+editNameVariable+randomNumberVariable+'&editMessage='+editMessageVariable,
 		success: function(data) {
 			$('#console').html(editNameVariable+' is on the blacklist.');
