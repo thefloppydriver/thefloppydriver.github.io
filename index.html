@@ -55,15 +55,18 @@
       </tr>
       <tr>
         <td align="right">Account Number: </td> 
-        <td align="left"><input type="text" id="accountNumber"></td>
+        <!--<td align="left"><input type="text" id="accountNumber"></td>-->
+        <td align="left"><input type="number" id="accountNumber" min="1" max="5" value="2"></td>
       </tr>
+      <tr>
+        <td align="right">MSP (Beta): </td>
+        <td align="left"><input type="checkbox" id="MSP"></td>
     </table>
   </div>
   
   <button onclick="delayFunction()">Spam!</button>
-  <!--<input id="loadButton" type="button" value="Load" />-->
 
-  <script type="text/javascript" src="javascript/index.js"></script>
+  <!--<script type="text/javascript" src="javascript/index.js"></script>-->
   <div id="console"></div>
   
 
