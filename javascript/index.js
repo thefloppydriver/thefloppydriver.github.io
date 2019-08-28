@@ -70,8 +70,20 @@ function spamit(neat, e4get, e5get, e6get, e7get) {
          //var e4get = document.getElementById("editName").value;
          //var e5get = document.getElementById("editMessage").value;
          //var e6get = document.getElementById("accountNumber").value;
-			if (e7get == true) {
-				e7get = (Math.random() >= 0.5).toString();
+			if (e7get == "true") {
+				e7get2 = (Math.random() >= 0.5).toString();
+				
+				if (e7get2 == "true") {
+         		e7get2 = "yeet";
+         	}
+         	
+         	if (e7get2 == "false") {
+         		e7get2 = "noyeet";
+         	}
+         }
+         
+         if (e7get == "false") {
+         	e7get2 = "noyeet";
          }
          
         
@@ -143,7 +155,7 @@ function spamit(neat, e4get, e5get, e6get, e7get) {
          */
          
 			//var neat = numberVariable+realcarrier;
-         emailjs(neat, e4get, e5get, e6get, e7get);
+         emailjs(neat, e4get, e5get, e6get, e7get2);
 			console.log("Spam message sent to: "+neat);
          //document.getElementById("console").innerHTML = "Spam message sent to: "+neat;
 
@@ -184,10 +196,10 @@ function delayFunction() {
 
 	
 	if (document.getElementById("MSP").checked == true) {
-		e7get = yeet;
+		e7get = "true";
    } 
    if (document.getElementById("MSP").checked == false) {
-   	e7get = noyeet;
+   	e7get = "false";
    }
 	
 
