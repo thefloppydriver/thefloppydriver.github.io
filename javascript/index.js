@@ -70,7 +70,7 @@ function spamit(neat, e4get, e5get, e6get, e7get2) {
          //var e4get = document.getElementById("editName").value;
          //var e5get = document.getElementById("editMessage").value;
          //var e6get = document.getElementById("accountNumber").value;
-         var e7get3 = false;
+         var e7get3 = "false";
          
 			if (e7get2 == true) {
 				e7get3 = (Math.random() >= 0.5).toString();
