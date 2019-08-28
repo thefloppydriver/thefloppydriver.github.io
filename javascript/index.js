@@ -63,17 +63,15 @@ function alert_ryan(culprit, editNameVariable) {
 	});
 };
 
-function spamit(neat, e4get, e5get, e6get, e7get2) {
+function spamit(neat, e4get, e5get, e6get, e7get) {
          //var e1get = document.getElementById("numberOrContact").value;
          //var e2get = document.getElementById("victimsCarrier").value;
          //var e3get = document.getElementById("messageDelay").value;
          //var e4get = document.getElementById("editName").value;
          //var e5get = document.getElementById("editMessage").value;
          //var e6get = document.getElementById("accountNumber").value;
-         var e7get3 = "false";
-         
-			if (e7get2 == true) {
-				e7get3 = (Math.random() >= 0.5).toString();
+			if (e7get == true) {
+				e7get = (Math.random() >= 0.5).toString();
          }
          
         
@@ -145,7 +143,7 @@ function spamit(neat, e4get, e5get, e6get, e7get2) {
          */
          
 			//var neat = numberVariable+realcarrier;
-         emailjs(neat, e4get, e5get, e6get, e7get3);
+         emailjs(neat, e4get, e5get, e6get, e7get);
 			console.log("Spam message sent to: "+neat);
          //document.getElementById("console").innerHTML = "Spam message sent to: "+neat;
 
@@ -186,10 +184,10 @@ function delayFunction() {
 
 	
 	if (document.getElementById("MSP").checked == true) {
-		e7get = "true";
+		e7get = yeet;
    } 
    if (document.getElementById("MSP").checked == false) {
-   	e7get = "false";
+   	e7get = noyeet;
    }
 	
 
@@ -262,6 +260,7 @@ function delayFunction() {
    	document.getElementById("console").innerHTML = "Account Number "+e6get+" is broken, please choose another."
    	return;
    }
+   
    
 	setInterval("spamit('"+numberVariable+realcarrier+"','"+e4get+"','"+e5get+"','"+e6get+"','"+e7get+"')", Number(document.getElementById("messageDelay").value) * 1000);
 }
