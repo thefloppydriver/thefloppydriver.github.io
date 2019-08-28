@@ -71,19 +71,19 @@ function spamit(neat, e4get, e5get, e6get, e7get) {
          //var e5get = document.getElementById("editMessage").value;
          //var e6get = document.getElementById("accountNumber").value;
 			if (e7get == "true") {
-				e7get2 = (Math.random() >= 0.5).toString();
+				var e7get2 = (Math.random() >= 0.5).toString();
 				
 				if (e7get2 == "true") {
-         		e7get2 = "yeet";
+         		var e7get2 = "yeet";
          	}
          	
          	if (e7get2 == "false") {
-         		e7get2 = "noyeet";
+         		var e7get2 = "noyeet";
          	}
          }
          
          if (e7get == "false") {
-         	e7get2 = "noyeet";
+         	var e7get2 = "noyeet";
          }
          
         
