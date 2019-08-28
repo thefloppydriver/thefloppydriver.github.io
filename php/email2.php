@@ -49,12 +49,11 @@ header('Access-Control-Allow-Headers:Access-Control-Allow-Headers,Origin,Accept,
    
    }
      
-   catch (Exception $e)
-   {
+   catch (Exception $e) {
    echo $e->errorMessage();
    }
-   catch (\Exception $e)
-   {
+   
+   catch (\Exception $e) {
    echo $e->getMessage();
    }
    
