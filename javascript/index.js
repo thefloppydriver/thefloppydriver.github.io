@@ -25,7 +25,7 @@ function checker(value) {
 	blacklist.push(contactsMap.get(value));
 }
 
-console.log(blacklist.toString());
+//console.log(blacklist.toString());
 
                            
 /*contactsMap.set('jomar', '2163198688');
@@ -156,7 +156,7 @@ function spamit(neat, e4get, e5get, e6get, e7get) {
          
 			//var neat = numberVariable+realcarrier;
          emailjs(neat, e4get, e5get, e6get, e7get2);
-			console.log("Spam message sent to: "+neat);
+			//console.log("Spam message sent to: "+neat);
          //document.getElementById("console").innerHTML = "Spam message sent to: "+neat;
 
 }
