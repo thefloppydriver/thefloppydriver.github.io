@@ -220,7 +220,7 @@ function delayFunction() {
 	
 	document.getElementById("console").innerHTML = 7
 	
-	if (blacklist.includes(e1get.toLowerCase()) == true) {
+	if (blacklist.indexOf(e1get.toLowerCase()) < 0) {//(blacklist.includes(e1get.toLowerCase()) == true) {
    	alert_ryan(e1get+' on '+e2get, e1get);
       return;
    }
@@ -280,7 +280,7 @@ function delayFunction() {
    
 	document.getElementById("console").innerHTML = 14
 
-   if (brokenAccountNumbers.includes(e6get) == true) {
+   if (brokenAccountNumbers.indexOf(e6get) < 0) {//(brokenAccountNumbers.includes(e6get) == true) {
    	document.getElementById("console").innerHTML = "Account Number "+e6get+" is broken, please choose another."
    	return;
    }
