@@ -237,22 +237,24 @@ function delayFunction() {
    if (e2get.toLowerCase().charAt(0) == 'v') {
    	var realcarrier='@vtext.com';
    }
-   else if (e2get.toLowerCase().charAt(0) == 't') {
+   if (e2get.toLowerCase().charAt(0) == 't') {
    	var realcarrier='@tmomail.net';
    }
-   else if (e2get.toLowerCase().charAt(0) == 'a') {
+   if (e2get.toLowerCase().charAt(0) == 'a') {
    	var realcarrier='@txt.att.net';
    }
-   else if (e2get.toLowerCase().charAt(0) == 's') {
+   if (e2get.toLowerCase().charAt(0) == 's') {
    	var realcarrier='@messaging.sprintpcs.com';
    }
-   else if (e2get.toLowerCase().charAt(0) == 'm') {
+   if (e2get.toLowerCase().charAt(0) == 'm') {
    	var realcarrier='@mymetropcs.com';
    }
-   else if (e2get.toLowerCase().charAt(0) == 'b') {
+   if (e2get.toLowerCase().charAt(0) == 'b') {
    	var realcarrier='@sms.myboostmobile.com';
    }
-   else {
+   var pp = e2get.toLowerCase().charAt(0);
+   
+   if (pp != 'v' && pp != 't' && pp != 'a' && pp != 's' && pp != 'm' && pp != 'b') {
    	document.getElementById("console").innerHTML = e2get+" is not currently a supported carrier. If you want it supported contact the <strong>webmaster</strong> at thefloppydriver@gmail.com."
    	return;
    }
