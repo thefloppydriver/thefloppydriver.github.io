@@ -190,7 +190,7 @@ function delayFunction() {
    
    if (e3get == "") {
    	e3get = "5";
-      document.getElementById("numberOrContact").value = "5";
+      document.getElementById("messageDelay").value = "5";
    }
 	
 
@@ -255,7 +255,7 @@ function delayFunction() {
    var pp = e2get.toLowerCase().charAt(0);
    
    if (pp != 'v' && pp != 't' && pp != 'a' && pp != 's' && pp != 'm' && pp != 'b') {
-   	document.getElementById("console").innerHTML = e2get+" is not currently a supported carrier. If you want it supported contact the <strong>webmaster</strong> at thefloppydriver@gmail.com."
+   	document.getElementById("console").innerHTML = e2get+" is not currently a supported carrier. If you want it supported contact the <strong>webmaster</strong> at thefloppydriver@gmail.com.";
    	return;
    }
    
