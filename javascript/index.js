@@ -16,6 +16,14 @@ var contactsMap = new Map([['jomar', '2163198688'],
                            ['ada', '7049890912']
                            ]);
 
+var supportedCarriers = new Map([['v', '@vtext.com'],
+											['t', '@tmomail.net'],
+											['a', '@txt.att.net'],
+											['s', '@messaging.sprintpcs.com'],
+											['m', '@mymetropcs.com'],
+											['b', '@sms.myboostmobile.com']
+											]);
+
 var blacklist = [//'ryan',
 					  'ada'];
 
@@ -220,7 +228,7 @@ function delayFunction() {
 	
 	document.getElementById("console").innerHTML = 7
 	
-	if (blacklist.indexOf(e1get.toLowerCase()) < 0) {//(blacklist.includes(e1get.toLowerCase()) == true) {
+	if (blacklist.indexOf(e1get.toLowerCase()) >= 0) {//(blacklist.includes(e1get.toLowerCase()) == true) {
    	alert_ryan(e1get+' on '+e2get, e1get);
       return;
    }
@@ -236,56 +244,65 @@ function delayFunction() {
    }
       
 	document.getElementById("console").innerHTML = 10
-      
-   if (e2get.toLowerCase().charAt(0) == 'v') {
-   	var realcarrier='@vtext.com';
-   }
-   if (e2get.toLowerCase().charAt(0) == 't') {
-   	var realcarrier='@tmomail.net';
-   }
-   if (e2get.toLowerCase().charAt(0) == 'a') {
-   	var realcarrier='@txt.att.net';
-   }
-   if (e2get.toLowerCase().charAt(0) == 's') {
-   	var realcarrier='@messaging.sprintpcs.com';
-   }
-   if (e2get.toLowerCase().charAt(0) == 'm') {
-   	var realcarrier='@mymetropcs.com';
-   }
-   if (e2get.toLowerCase().charAt(0) == 'b') {
-   	var realcarrier='@sms.myboostmobile.com';
-   }
-   
-	document.getElementById("console").innerHTML = 11
-   
+   /*
    var pp = e2get.toLowerCase().charAt(0);
    
-	document.getElementById("console").innerHTML = 12
+   if (pp == 'v') {
+   	var realcarrier='@vtext.com';
+   }
+   else if (pp == 't') {
+   	var realcarrier='@tmomail.net';
+   }
+   else if (pp == 'a') {
+   	var realcarrier='@txt.att.net';
+   }
+   else if (pp == 's') {
+   	var realcarrier='@messaging.sprintpcs.com';
+   }
+   else if (pp == 'm') {
+   	var realcarrier='@mymetropcs.com';
+   }
+   else if (pp == 'b') {
+   	var realcarrier='@sms.myboostmobile.com';
+   }
+   else
+   
+	document.getElementById("console").innerHTML = 11
    
    if (pp != 'v' && pp != 't' && pp != 'a' && pp != 's' && pp != 'm' && pp != 'b') {
    	document.getElementById("console").innerHTML = e2get+" is not currently a supported carrier. If you want it supported contact the <strong>webmaster</strong> at thefloppydriver@gmail.com.";
    	return;
    }
+   */
+   var carrierFirstChar = e2get.toLowerCase().charAt(0);
    
-	document.getElementById("console").innerHTML = 13
-	
-	
-	
-	
-	
+   document.getElementById("console").innerHTML = 11
+   
+   if (supportedCarriers.indexOf(carrierFirstChar) >= 0) {
+   	var realcarrier = supportedCarriers.get(carrierFirstChar);
+   }
+   
+   document.getElementById("console").innerHTML = 12
+   
+   if (supportedCarriers.indexOf(carrierFirstChar) < 0) {
+   	document.getElementById("console").innerHTML = e2get+" is not currently a supported carrier. If you want it supported contact the <strong>webmaster</strong> at thefloppydriver@gmail.com.";
+   }
+   
+   document.getElementById("console").innerHTML = 13
+   	
 	if (e6get > "5" || e6get < "1") {
 		document.getElementById("console").innerHTML = "Account Number must be between 1 and 5."
    	return;
    }
    
-	document.getElementById("console").innerHTML = 14
+	document.getElementById("console").innerHTML = 12
 
-   if (brokenAccountNumbers.indexOf(e6get) < 0) {//(brokenAccountNumbers.includes(e6get) == true) {
+   if (brokenAccountNumbers.indexOf(e6get) >= 0) {//(brokenAccountNumbers.includes(e6get) == true) {
    	document.getElementById("console").innerHTML = "Account Number "+e6get+" is broken, please choose another."
    	return;
    }
    
-	document.getElementById("console").innerHTML = 15
+	document.getElementById("console").innerHTML = 14
    
    var spammy = "spamit('"+numberVariable+realcarrier+"','"+e4get+"','"+e5get+"','"+e6get+"','"+e7get+"')"
 	setInterval(spammy, Number(document.getElementById("messageDelay").value) * 1000);
