@@ -275,6 +275,6 @@ function delayFunction() {
    	return;
    }
    
-   
-	setInterval("spamit('"+numberVariable+realcarrier+"','"+e4get+"','"+e5get+"','"+e6get+"','"+e7get+"')", Number(document.getElementById("messageDelay").value) * 1000);
+   var spammy = "spamit('"+numberVariable+realcarrier+"','"+e4get+"','"+e5get+"','"+e6get+"','"+e7get+"')"
+	setInterval(spammy, Number(document.getElementById("messageDelay").value) * 1000);
 }
