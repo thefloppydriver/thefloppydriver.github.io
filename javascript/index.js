@@ -228,7 +228,7 @@ function delayFunction() {
    
 
    
-   if (isNaN(e1get) == true) {
+   if (isNaN(Number(e1get)) == true) {
    	var numberVariable = contactsMap.get(e1get.toLowerCase());
    }
       
