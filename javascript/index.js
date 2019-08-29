@@ -16,13 +16,14 @@ var contactsMap = new Map([['jomar', '2163198688'],
                            ['ada', '7049890912']
                            ]);
 
-var supportedCarriers = new Map([['v', '@vtext.com'],
-											['t', '@tmomail.net'],
-											['a', '@txt.att.net'],
-											['s', '@messaging.sprintpcs.com'],
-											['m', '@mymetropcs.com'],
-											['b', '@sms.myboostmobile.com']
-											]);
+var supportedCarriers = {
+								'v':'@vtext.com',
+								't':'@tmomail.net',
+								'a':'@txt.att.net',
+								's':'@messaging.sprintpcs.com',
+								'm':'@mymetropcs.com',
+								'b':'@sms.myboostmobile.com'
+								};
 
 var blacklist = [//'ryan',
 					  'ada'];
@@ -32,6 +33,7 @@ blacklist.forEach(checker);
 function checker(value) {
 	blacklist.push(contactsMap.get(value));
 }
+
 
 //console.log(blacklist.toString());
 
@@ -278,13 +280,13 @@ function delayFunction() {
    
    document.getElementById("console").innerHTML = 11
    
-   if (supportedCarriers.indexOf(carrierFirstChar) >= 0) {
-   	var realcarrier = supportedCarriers.get(carrierFirstChar);
+   if (supportedCarriers[carrierFirstChar] != undefined) {
+   	var realcarrier = supportedCarriers[carrierFirstChar];
    }
    
    document.getElementById("console").innerHTML = 12
    
-   if (supportedCarriers.indexOf(carrierFirstChar) < 0) {
+   if (supportedCarriers[carrierFirstChar] == undefined) {
    	document.getElementById("console").innerHTML = e2get+" is not currently a supported carrier. If you want it supported contact the <strong>webmaster</strong> at thefloppydriver@gmail.com.";
    }
    
