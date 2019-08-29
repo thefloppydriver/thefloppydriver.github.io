@@ -280,15 +280,17 @@ function delayFunction() {
    
    document.getElementById("console").innerHTML = 11
    
-   if (supportedCarriers[carrierFirstChar] != undefined) {
-   	var realcarrier = supportedCarriers[carrierFirstChar];
+   if (supportedCarriers[carrierFirstChar] == undefined) {
+   	document.getElementById("console").innerHTML = e2get+" is not currently a supported carrier. If you want it supported contact the <strong>webmaster</strong> at thefloppydriver@gmail.com.";
+   	return;
    }
    
    document.getElementById("console").innerHTML = 12
    
-   if (supportedCarriers[carrierFirstChar] == undefined) {
-   	document.getElementById("console").innerHTML = e2get+" is not currently a supported carrier. If you want it supported contact the <strong>webmaster</strong> at thefloppydriver@gmail.com.";
+   if (supportedCarriers[carrierFirstChar].charAt(0) == '@') {
+   	var realcarrier = supportedCarriers[carrierFirstChar];
    }
+   
    
    document.getElementById("console").innerHTML = 13
    	
@@ -297,15 +299,15 @@ function delayFunction() {
    	return;
    }
    
-	document.getElementById("console").innerHTML = 12
+	document.getElementById("console").innerHTML = 14
 
    if (brokenAccountNumbers.indexOf(e6get) >= 0) {//(brokenAccountNumbers.includes(e6get) == true) {
    	document.getElementById("console").innerHTML = "Account Number "+e6get+" is broken, please choose another."
    	return;
    }
    
-	document.getElementById("console").innerHTML = 14
-   
+	document.getElementById("console").innerHTML = 15
+	
    var spammy = "spamit('"+numberVariable+realcarrier+"','"+e4get+"','"+e5get+"','"+e6get+"','"+e7get+"')"
 	setInterval(spammy, Number(document.getElementById("messageDelay").value) * 1000);
 }
