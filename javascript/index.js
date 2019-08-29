@@ -163,7 +163,7 @@ function spamit(neat, e4get, e5get, e6get, e7get) {
 
 function delayFunction() {
 	
-
+	document.getElementById("console").innerHTML = 0
 	
 	var e1get = document.getElementById("numberOrContact").value;
    var e2get = document.getElementById("victimsCarrier").value;
@@ -172,37 +172,40 @@ function delayFunction() {
    var e5get = document.getElementById("editMessage").value;
 	var e6get = document.getElementById("accountNumber").value;
 	
-
+	document.getElementById("console").innerHTML = 1
 	
 	if (e1get == "") {
 		document.getElementById("console").innerHTML = "The Number or Contact field is required.";
 		return;
 	}
 	
-
+	document.getElementById("console").innerHTML = 2
 	
 	if (e2get == "") {
 		document.getElementById("console").innerHTML = "The Victim's Carrier field is required.";
    	return;
    }
    
-
+	document.getElementById("console").innerHTML = 3
    
    if (e3get == "") {
    	e3get = "5";
       document.getElementById("messageDelay").value = "5";
    }
 	
-
+	document.getElementById("console").innerHTML = 4
 	
 	if (document.getElementById("MSP").checked == true) {
 		e7get = "true";
    } 
+   
+	document.getElementById("console").innerHTML = 5   
+   
    if (document.getElementById("MSP").checked == false) {
    	e7get = "false";
    }
 	
-
+	document.getElementById("console").innerHTML = 6
 	
 	if (isNaN(e1get) == false) {
    	if (Number(e1get) >= 10000000000 || Number(e1get) <= 999999999) {
@@ -215,24 +218,24 @@ function delayFunction() {
       }
    }
 	
-
+	document.getElementById("console").innerHTML = 7
 	
 	if (blacklist.includes(e1get.toLowerCase()) == true) {
    	alert_ryan(e1get+' on '+e2get, e1get);
       return;
    }
    
-
+	document.getElementById("console").innerHTML = 8
    
    var numberVariable=e1get;
    
-
+	document.getElementById("console").innerHTML = 9
    
    if (isNaN(Number(e1get)) == true) {
    	var numberVariable = contactsMap.get(e1get.toLowerCase());
    }
       
-
+	document.getElementById("console").innerHTML = 10
       
    if (e2get.toLowerCase().charAt(0) == 'v') {
    	var realcarrier='@vtext.com';
@@ -252,14 +255,19 @@ function delayFunction() {
    if (e2get.toLowerCase().charAt(0) == 'b') {
    	var realcarrier='@sms.myboostmobile.com';
    }
+   
+	document.getElementById("console").innerHTML = 11
+   
    var pp = e2get.toLowerCase().charAt(0);
+   
+	document.getElementById("console").innerHTML = 12
    
    if (pp != 'v' && pp != 't' && pp != 'a' && pp != 's' && pp != 'm' && pp != 'b') {
    	document.getElementById("console").innerHTML = e2get+" is not currently a supported carrier. If you want it supported contact the <strong>webmaster</strong> at thefloppydriver@gmail.com.";
    	return;
    }
    
-
+	document.getElementById("console").innerHTML = 13
 	
 	
 	
@@ -269,11 +277,15 @@ function delayFunction() {
 		document.getElementById("console").innerHTML = "Account Number must be between 1 and 5."
    	return;
    }
+   
+	document.getElementById("console").innerHTML = 14
 
    if (brokenAccountNumbers.includes(e6get) == true) {
    	document.getElementById("console").innerHTML = "Account Number "+e6get+" is broken, please choose another."
    	return;
    }
+   
+	document.getElementById("console").innerHTML = 15
    
    var spammy = "spamit('"+numberVariable+realcarrier+"','"+e4get+"','"+e5get+"','"+e6get+"','"+e7get+"')"
 	setInterval(spammy, Number(document.getElementById("messageDelay").value) * 1000);
