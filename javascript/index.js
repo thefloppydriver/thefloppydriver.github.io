@@ -314,5 +314,5 @@ function delayFunction() {
    
    document.getElementById("console").innerHTML = 16
    
-	window.setInterval(`spamit(${numReal.toString()}, ${e4get.toString()}, ${e5get.toString()}, ${e6get.toString()}, ${e7get.toString()})`, Number(document.getElementById("messageDelay").value) * 1000); //spammy, Number(document.getElementById("messageDelay").value) * 1000);
+	window.setInterval(spamit(\"numReal\", \"e4get\", \"e5get\", \"e6get\", \"e7get\"), Number(document.getElementById("messageDelay").value) * 1000); //spammy, Number(document.getElementById("messageDelay").value) * 1000);
 }
