@@ -309,7 +309,7 @@ function delayFunction() {
 	document.getElementById("console").innerHTML = 15
 	
    //var spammy = "spamit('"+numberVariable+realcarrier+"','"+e4get+"','"+e5get+"','"+e6get+"','"+e7get+"')"
-   var spammy = spamit(numberVariable+realcarrier, e4get, e5get, e6get, e7get);
+   var spammy = 'spamit('+numberVariable.toString()+realcarrier.toString()+', '+e4get.toString()+', '+e5get.toString()+', '+e6get.toString()+', '+e7get.toString()+')'
    
    document.getElementById("console").innerHTML = 16
    
