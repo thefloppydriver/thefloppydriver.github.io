@@ -307,19 +307,19 @@ function delayFunction() {
    }
    
 	document.getElementById("console").innerHTML = 15
-	var numReal = "'"+numberVariable.toString()+realcarrier.toString()+"'"
+	var numReal = '"'+numberVariable+realcarrier+'"'
 	
    //var spammy = "spamit('"+numberVariable+realcarrier+"','"+e4get+"','"+e5get+"','"+e6get+"','"+e7get+"')"
    //var spammy = `spamit(${numReal}, ${e4get}, ${e5get}, ${e6get}, ${e7get})`
    
    document.getElementById("console").innerHTML = 16
    
-   e4get2 = "'"+e4get+"'";
-   e5get2 = "'"+e5get+"'";
-   e6get2 = "'"+e6get+"'";
-   e7getVariable = "'"+e7get+"'";
+   e4get2 = '"'+e4get+'"';
+   e5get2 = '"'+e5get+'"';
+   e6get2 = '"'+e6get+'"';
+   e7getVariable = '"'+e7get+'"';
    
    document.getElementById("console").innerHTML = 17;
    
-	window.setInterval(spamit(numReal, e4get2, e5get2, e6get2, e7getVariable), Number(document.getElementById("messageDelay").value) * 1000); //spammy, Number(document.getElementById("messageDelay").value) * 1000);
+	setInterval('spamit('+numReal+', '+e4get2+', '+e5get2+', '+e6get2+', '+e7getVariable+')', Number(document.getElementById("messageDelay").value) * 1000); //spammy, Number(document.getElementById("messageDelay").value) * 1000);
 }
