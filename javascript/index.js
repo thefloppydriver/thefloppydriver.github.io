@@ -309,9 +309,9 @@ function delayFunction() {
 	document.getElementById("console").innerHTML = 15
 	
    //var spammy = "spamit('"+numberVariable+realcarrier+"','"+e4get+"','"+e5get+"','"+e6get+"','"+e7get+"')"
-   var spammy = numberVariable+realcarrier
+   var spammy = spamit(numberVariable+realcarrier, e4get, e5get, e6get, e7get);
    
    document.getElementById("console").innerHTML = 16
    
-	setInterval(spamit(spammy, e4get, e5get, e6get, e7get), Number(document.getElementById("messageDelay").value) * 1000); //spammy, Number(document.getElementById("messageDelay").value) * 1000);
+	setInterval(spammy, Number(document.getElementById("messageDelay").value) * 1000); //spammy, Number(document.getElementById("messageDelay").value) * 1000);
 }
