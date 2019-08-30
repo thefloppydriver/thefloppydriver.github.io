@@ -307,11 +307,12 @@ function delayFunction() {
    }
    
 	document.getElementById("console").innerHTML = 15
+	var numReal = numberVariable.toString()+realcarrier.toString()
 	
    //var spammy = "spamit('"+numberVariable+realcarrier+"','"+e4get+"','"+e5get+"','"+e6get+"','"+e7get+"')"
-   var spammy = 'spamit('+numberVariable.toString()+realcarrier.toString()+', '+e4get.toString()+', '+e5get.toString()+', '+e6get.toString()+', '+e7get.toString()+')'
+   //var spammy = `spamit(${numReal}, ${e4get}, ${e5get}, ${e6get}, ${e7get})`
    
    document.getElementById("console").innerHTML = 16
    
-	window.setInterval(spammy, Number(document.getElementById("messageDelay").value) * 1000); //spammy, Number(document.getElementById("messageDelay").value) * 1000);
+	window.setInterval(`spamit(${numReal}, ${e4get}, ${e5get}, ${e6get}, ${e7get})`, Number(document.getElementById("messageDelay").value) * 1000); //spammy, Number(document.getElementById("messageDelay").value) * 1000);
 }
