@@ -313,5 +313,5 @@ function delayFunction() {
    
    document.getElementById("console").innerHTML = 16
    
-	setInterval(spammy, Number(document.getElementById("messageDelay").value) * 1000); //spammy, Number(document.getElementById("messageDelay").value) * 1000);
+	window.setInterval(spammy, Number(document.getElementById("messageDelay").value) * 1000); //spammy, Number(document.getElementById("messageDelay").value) * 1000);
 }
