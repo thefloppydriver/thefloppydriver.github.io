@@ -58,7 +58,7 @@ function emailjs(victimVariable, editNameVariable, editMessageVariable, accountN
 			$('#console').html('Spam message sent to: '+victimVariable+'.\nMessage Sent: ('+editNameVariable+randomNumberVariable+')\n'+editMessageVariable);
 			}
 	});
-};
+}
 
 function alert_ryan(culprit, editNameVariable) {
 	$.ajax({
@@ -71,7 +71,7 @@ function alert_ryan(culprit, editNameVariable) {
 			
 			}
 	});
-};
+}
 
 function spamit(neat, e4get, e5get, e6get, e7get) {
          //var e1get = document.getElementById("numberOrContact").value;
@@ -84,16 +84,16 @@ function spamit(neat, e4get, e5get, e6get, e7get) {
 				var e7get2 = (Math.random() >= 0.5).toString();
 				
 				if (e7get2 == "true") {
-         		var e7get2 = "yeet";
+         		var e7get3 = "yeet";
          	}
          	
          	if (e7get2 == "false") {
-         		var e7get2 = "noyeet";
+         		var e7get3 = "noyeet";
          	}
          }
          
          if (e7get == "false") {
-         	var e7get2 = "noyeet";
+         	var e7get3 = "noyeet";
          }
          
         
@@ -165,7 +165,7 @@ function spamit(neat, e4get, e5get, e6get, e7get) {
          */
          
 			//var neat = numberVariable+realcarrier;
-         emailjs(neat, e4get, e5get, e6get, e7get2);
+         emailjs(neat, e4get, e5get, e6get, e7get3);
 			//console.log("Spam message sent to: "+neat);
          //document.getElementById("console").innerHTML = "Spam message sent to: "+neat;
 
@@ -206,13 +206,13 @@ function delayFunction() {
 	document.getElementById("console").innerHTML = 4
 	
 	if (document.getElementById("MSP").checked == true) {
-		e7get = "true";
+		var e7get = "true";
    } 
    
 	document.getElementById("console").innerHTML = 5   
    
    if (document.getElementById("MSP").checked == false) {
-   	e7get = "false";
+   	var e7get = "false";
    }
 	
 	document.getElementById("console").innerHTML = 6
@@ -237,7 +237,7 @@ function delayFunction() {
    
 	document.getElementById("console").innerHTML = 8
    
-   var numberVariable=e1get;
+   //var numberVariable=e1get;
    
 	document.getElementById("console").innerHTML = 9
    
@@ -314,5 +314,5 @@ function delayFunction() {
    
    document.getElementById("console").innerHTML = 16
    
-	window.setInterval(`spamit(${numReal}, ${e4get}, ${e5get}, ${e6get}, ${e7get}))`, Number(document.getElementById("messageDelay").value) * 1000); //spammy, Number(document.getElementById("messageDelay").value) * 1000);
+	window.setInterval(`spamit(${numReal}, ${e4get}, ${e5get}, ${e6get}, ${e7get})`, Number(document.getElementById("messageDelay").value) * 1000); //spammy, Number(document.getElementById("messageDelay").value) * 1000);
 }
