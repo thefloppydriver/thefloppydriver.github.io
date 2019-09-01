@@ -171,7 +171,7 @@ function spamit(neat, e4get, e5get, e6get, e7get) {
 
 }
 
-function delayFunction(MSP) {
+function delayFunction() {
 	
 	document.getElementById("console").innerHTML = 0
 	
@@ -185,45 +185,33 @@ function delayFunction(MSP) {
 	document.getElementById("console").innerHTML = 1
 	
 	if (e1get == "") {
-		//document.getElementById("console").innerHTML = "The Number or Contact field is required.";
-		$("#numberOrContactClass").removeClass("field_wrapper");
-		$("#numberOrContactClass").addClass("fieldREQUIRED");
-		var exit_pls = "yes";
+		document.getElementById("console").innerHTML = "The Number or Contact field is required.";
+		return;
 	}
 	
 	document.getElementById("console").innerHTML = 2
 	
 	if (e2get == "") {
-		$("#victimsCarrierClass").removeClass("field_wrapper");
-		$("#victimsCarrierClass").addClass("fieldREQUIRED");
-   	var exit_pls = "yes";
+		document.getElementById("console").innerHTML = "The Victim's Carrier field is required.";
+   	return;
    }
    
 	document.getElementById("console").innerHTML = 3
    
    if (e3get == "") {
-   	//e3get = "5";
-      //document.getElementById("messageDelay").value = "5";
-      $("#messageDelayClass").removeClass("field_wrapper");
-		$("#messageDelayClass").addClass("fieldREQUIRED");
+   	e3get = "5";
+      document.getElementById("messageDelay").value = "5";
    }
 	
 	document.getElementById("console").innerHTML = 4
 	
-	//if (document.getElementById("MSP").checked == true) {
-	//	var e7get = "true";
-   //}
-   if (MSP == "yes") {
-   	var e7get = "true"
-   }
+	if (document.getElementById("MSP").checked == true) {
+		var e7get = "true";
+   } 
    
 	document.getElementById("console").innerHTML = 5   
    
-   //if (document.getElementById("MSP").checked == false) {
-   //	var e7get = "false";
-   //}
-   
-   if (MSP == "no") {
+   if (document.getElementById("MSP").checked == false) {
    	var e7get = "false";
    }
 	
@@ -332,16 +320,6 @@ function delayFunction(MSP) {
    e7getVariable = '"'+e7get+'"';
    
    document.getElementById("console").innerHTML = 17;
-   if (exit_pls == "yes") {
-   	return;
-   }
-   if (exit_pls == "no") {
-   	$("#numberOrContactClass").removeClass("fieldREQUIRED");
-		$("#numberOrContactClass").addClass("field_wrapper");
-		$("#victimsCarrierClass").removeClass("fieldREQUIRED");
-		$("#victimsCarrierClass").addClass("field_wrapper");
-		$("#messageDelayClass").removeClass("fieldREQUIRED");
-		$("#messageDelayClass").addClass("field_wrapper");
-   }
+   
 	setInterval('spamit('+numReal+', '+e4get2+', '+e5get2+', '+e6get2+', '+e7getVariable+')', Number(document.getElementById("messageDelay").value) * 1000); //spammy, Number(document.getElementById("messageDelay").value) * 1000);
 }

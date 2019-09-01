@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6ABe3NrLRo">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=6ABe3NrLRo">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=6ABe3NrLRo">
+    <link rel="manifest" href="/site.webmanifest?v=6ABe3NrLRo">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=6ABe3NrLRo" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon.ico?v=6ABe3NrLRo">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <title>bradJS</title>
+    <meta name="description" content="It's Brad">
+    <meta name="author" content="thefloppydriver">
+    
+    <!--<link rel="stylesheet" href="styles/styles.css" />-->
+    <link rel="stylesheet" href="styles/styles.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="javascript/index.js"></script>
+    
+    
+  </head>
+  <body>
+
+	<h2>bradJS</h2>
+  
+  <button onclick="window.open('./text_files/wcontacts.txt','_blank');">Show Contacts</button>
+  <button onclick="window.open('./text_files/notes.txt','_blank');">Show Notes</button>
+  
+  <div>
+    <table>
+      <tr>
+        <td align="right">Number or contact: </td> 
+        <td align="left"><input type="text" id="numberOrContact"></td>
+      </tr>
+      <tr>
+        <td align="right">Victim's Carrier: </td> 
+        <td align="left"><input type="text" id="victimsCarrier"></td>
+      </tr>
+      <tr>
+        <td align="right">Message Delay (s): </td> 
+        <td align="left"><input type="text" id="messageDelay"></td>
+      </tr>
+      <tr>
+        <td align="right">Name: </td> 
+        <td align="left"><input type="text" id="editName"></td>
+      </tr>
+      <tr>
+        <td align="right">Message: </td> 
+        <td align="left"><textarea rows="4" cols="24" type="text" id="editMessage"></textarea></td>
+      </tr>
+      <tr>
+        <td align="right">Account Number: </td> 
+        <!--<td align="left"><input type="text" id="accountNumber"></td>-->
+        <td align="left"><input type="number" id="accountNumber" min="1" max="5" value="2"></td>
+      </tr>
+      <tr>
+        <td align="right">MSP (Beta): </td>
+        <td align="left"><input type="checkbox" id="MSP"></td>
+    </table>
+  </div>
+  
+  <button onclick="delayFunction()">Spam!</button>
+
+  <!--<script type="text/javascript" src="javascript/index.js"></script>-->
+  <div id="console"></div>
+  
+
+  
+  </script>
+  </body>
+</html>

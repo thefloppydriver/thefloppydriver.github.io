@@ -5,72 +5,221 @@
     <meta charset="utf-8">
     <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6ABe3NrLRo">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=6ABe3NrLRo">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=6ABe3NrLRo">
     <link rel="manifest" href="/site.webmanifest?v=6ABe3NrLRo">
     <link rel="mask-icon" href="/safari-pinned-tab.svg?v=6ABe3NrLRo" color="#5bbad5">
     <link rel="shortcut icon" href="/favicon.ico?v=6ABe3NrLRo">
+    
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#ffffff">
+    
     <title>bradJS</title>
-    <meta name="description" content="It's Brad">
+    <meta name="description" content="It's Brad!">
     <meta name="author" content="thefloppydriver">
     
-    <!--<link rel="stylesheet" href="styles/styles.css" />-->
+    <!-- The link below (V) takes the html buttons and makes them fancier XD-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
     
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="javascript/index.js"></script>
-    
+    <script type="text/javascript" src="javascript/place-holder.js"></script>
     
   </head>
+  
+  
   <body>
 
-	<h2>bradJS</h2>
+	<h1><br>bradJS</h2>
   
-  <button onclick="window.open('./text_files/wcontacts.txt','_blank');">Show Contacts</button>
-  <button onclick="window.open('./text_files/notes.txt','_blank');">Show Notes</button>
   
-  <div>
-    <table>
-      <tr>
-        <td align="right">Number or contact: </td> 
-        <td align="left"><input type="text" id="numberOrContact"></td>
-      </tr>
-      <tr>
-        <td align="right">Victim's Carrier: </td> 
-        <td align="left"><input type="text" id="victimsCarrier"></td>
-      </tr>
-      <tr>
-        <td align="right">Message Delay (s): </td> 
-        <td align="left"><input type="text" id="messageDelay"></td>
-      </tr>
-      <tr>
-        <td align="right">Name: </td> 
-        <td align="left"><input type="text" id="editName"></td>
-      </tr>
-      <tr>
-        <td align="right">Message: </td> 
-        <td align="left"><textarea rows="4" cols="24" type="text" id="editMessage"></textarea></td>
-      </tr>
-      <tr>
-        <td align="right">Account Number: </td> 
-        <!--<td align="left"><input type="text" id="accountNumber"></td>-->
-        <td align="left"><input type="number" id="accountNumber" min="1" max="5" value="2"></td>
-      </tr>
-      <tr>
-        <td align="right">MSP (Beta): </td>
-        <td align="left"><input type="checkbox" id="MSP"></td>
-    </table>
+  
+  
+    
+    <!--<p>Victim's Carrier: </p>
+    <input type="text" id="victimsCarrier">
+    
+    <p>Message Delay (s): </p>
+    <input type="text" id="messageDelay">
+
+    <p>Name: </p>
+    <input type="text" id="editName">
+
+    <p>Message: </p>
+    <textarea rows="4" cols="24" type="text" id="editMessage"></textarea>
+    
+    <p>Account Number: </p>
+    <input type="number" id="accountNumber" min="1" max="5" value="2">
+    
+    <p>MSP (Beta): <input type="checkbox" id="MSP"></p>
+    
+  </div>-->
+  
+
+  
+
+  
+
+  <div class="form-wrapper-outer">
+
+    <div class="form-logo">
+      <img src="alien512x512.png" alt="logo">
+    </div>
+    
+    <div class="form-greeting">
+      <span>It's nice to see you.</span>
+    </div>
+
+
+
+    <div class="field-wrapper">
+      <div class="field-wrapper" id="numberOrContactClass"> <!-- $("#numberOrContactClass").removeClass("field_wrapper") -> $("#numberOrContactClass").addClass("fieldREQUIRED")-->
+        <input type="text" name="numberOrContact" id="numberOrContact">
+        <div class="field-placeholder"><span>Number or contact</span></div>
+      </div>
+      
+      <div class="googleREQUIRED removeItem" id="numberOrContactRequired"> <!--$("#numberOrContactRequired").removeClass("hideItem")-->
+        <svg class="stUf5b" xmlns="https://www.w3.org/2000/svg" aria-hidden="false" focusable="true" width="16px" height="16px" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+        </svg>
+        
+        <span>&nbsp;Enter number or contact</span>
+        <br></br>
+        
+        
+      </div>
+    </div>
+    
+    
+    
+    <div class="field-wrapper">
+      <div class="field-wrapper" id="victimsCarrierClass">
+        <input type="text" name="victimsCarrier" id="victimsCarrier">
+        <div class="field-placeholder"><span>Victim's Carrier</span></div>
+      </div>
+      
+      <div class="googleREQUIRED removeItem" id="victimsCarrierRequired">
+        <svg class="stUf5b" xmlns="https://www.w3.org/2000/svg" aria-hidden="false" focusable="true" width="16px" height="16px" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+        </svg>
+        
+        <span>&nbsp;Enter victim's carrier</span>
+        <br></br>
+        
+        
+      </div>
+    </div>
+      
+    
+    
+    <div class="field-wrapper">
+      <div class="field-wrapper" id="messageDelayClass">
+        <input type="text" name="messageDelay" id="messageDelay">
+        <div class="field-placeholder"><span>Message delay [s]</span></div>
+      </div>
+      
+      <div class="googleREQUIRED removeItem" id="messageDelayRequired">
+        <svg class="stUf5b" xmlns="https://www.w3.org/2000/svg" aria-hidden="false" focusable="true" width="16px" height="16px" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+        </svg>
+        
+        <span>&nbsp;Enter message delay</span>
+        <br></br>
+        
+        
+      </div>
+    </div>
+    
+    
+    
+    <div class="field-wrapper">
+      <div class="field-wrapper" id="accountNumberClass">
+        <input type="number" name="accountNumber" id="accountNumber" min="1" max="5" value="2">
+        <div class="field-placeholder"><span>Account Number</span></div>
+      </div>
+      
+      <div class="googleREQUIRED removeItem" id="accountNumberRequired">
+        <svg class="stUf5b" xmlns="https://www.w3.org/2000/svg" aria-hidden="false" focusable="true" width="16px" height="16px" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+        </svg>
+        
+        <span>&nbsp;Enter account number</span>
+        <br></br>
+        
+        
+      </div>
+    </div>
+    
+    
+    
+    <div class="field-wrapper">
+      <div class="field-wrapper" id="editNameClass">
+        <input type="text" name="editName" id="editName">
+        <div class="field-placeholder"><span>Name</span></div>
+      </div>
+      
+      <div class="googleREQUIRED removeItem" id="editNameRequired">
+        <svg class="stUf5b" xmlns="https://www.w3.org/2000/svg" aria-hidden="false" focusable="true" width="16px" height="16px" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+        </svg>
+        
+        <span>&nbsp;Enter name</span>
+        <br></br>
+        
+        
+      </div>
+    </div>
+    
+    
+    
+    <div class="field-wrapper">
+      <div class="field-wrapper" id="editMessageClass">
+        <textarea rows="4" cols="24" type="text" name="editMessage" id="editMessage"></textarea>
+        <div class="field-placeholder"><span>Message</span></div>
+      </div>
+      
+      <div class="googleREQUIRED removeItem" id="editMessageRequired">
+        <svg class="stUf5b" xmlns="https://www.w3.org/2000/svg" aria-hidden="false" focusable="true" width="16px" height="16px" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+        </svg>
+        
+        <span>&nbsp;Enter message</span>
+        <br></br>
+        
+        
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <!--<p>MSP (Beta): <input type="checkbox" id="MSP"></p>-->
+    
+    <div class="form-button">
+    <button type="button" class="btn btn-success" onclick="delayFunction('yes')">Spam! (MSP)</button>
+      <button type="button" class="btn btn-success" onclick="delayFunction('no')">Spam!</button>
+    </div>
+    
+    
+    
   </div>
-  
-  <button onclick="delayFunction()">Spam!</button>
-
-  <!--<script type="text/javascript" src="javascript/index.js"></script>-->
+  <div class="showButtons">
+    <button onclick="window.open('./text_files/wcontacts.txt','_blank');">Show Contacts</button>
+    <button onclick="window.open('./text_files/notes.txt','_blank');">Show Notes</button>
+  </div>
   <div id="console"></div>
-  
 
-  
-  </script>
   </body>
 </html>

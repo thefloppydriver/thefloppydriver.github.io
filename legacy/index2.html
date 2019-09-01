@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6ABe3NrLRo">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=6ABe3NrLRo">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=6ABe3NrLRo">
+    <link rel="manifest" href="/site.webmanifest?v=6ABe3NrLRo">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=6ABe3NrLRo" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon.ico?v=6ABe3NrLRo">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <title>bradJS</title>
+    <meta name="description" content="It's Brad">
+    <meta name="author" content="thefloppydriver">
+    
+    <!--<link rel="stylesheet" href="styles/styles.css" />-->
+    <link rel="stylesheet" href="styles/styles.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="javascript/index.js"></script>
+    
+    
+  </head>
+  <body>
+
+	<h1>bradJS</h2>
+  
+  <button onclick="window.open('./text_files/wcontacts.txt','_blank');">Show Contacts</button>
+  <button onclick="window.open('./text_files/notes.txt','_blank');">Show Notes</button>
+  
+  <div class="field-wrapper">
+    <!--<p>Number or contact: </p>-->
+    <input type="text" id="numberOrContact">
+    <div class="field-placeholder"><span>Number or Contact</span></div>
+  </div>
+    
+    <!--<p>Victim's Carrier: </p>-->
+    <input type="text" id="victimsCarrier">
+    
+    <!--<p>Message Delay (s): </p>-->
+    <input type="text" id="messageDelay">
+
+    <!--<p>Name: </p>-->
+    <input type="text" id="editName">
+
+    <!--<p>Message: </p>-->
+    <textarea rows="4" cols="24" type="text" id="editMessage"></textarea>
+    
+    <!--<p>Account Number: </p>-->
+    <input type="number" id="accountNumber" min="1" max="5" value="2">
+    
+    <p>MSP (Beta): <input type="checkbox" id="MSP"></p>
+    
+  </div>
+  
+  <button onclick="delayFunction()">Spam!</button>
+
+  <!--<script type="text/javascript" src="javascript/index.js"></script>-->
+  <div id="console"></div>
+  
+
+  
+  <script>
+    $(function () {
+      $(".field-wrapper .field-placeholder").on("click", function () {
+        $(this).closest(".field-wrapper").find("input").focus();
+        });
+        
+      $(".field-wrapper input").on("keyup", function () {
+        var value = $.trim($(this).val());
+        
+        if (value) {
+          $(this).closest(".field-wrapper").addClass("hasValue");
+        } else {
+          $(this).closest(".field-wrapper").removeClass("hasValue");
+        }
+      });
+ 
+    });
+  </script>
+  
+  <div class="form-wrapper-outer">
+
+    <div class="form-logo">
+      <img src="https://www.freakyjolly.com/wp-content/uploads/2017/08/cropped-fjlogo2.png" alt="logo">
+    </div>
+    <div class="form-greeting">
+      <span>It's nice to meet you.</span>
+    </div>
+
+
+    <div class="field-wrapper">
+      <input type="email" name="email" id="">
+      <div class="field-placeholder"><span>Enter your email</span></div>
+    </div>
+    
+    <div class="field-wrapper">
+      <input type="password" name="password" id="">
+      <div class="field-placeholder"><span>Enter your password</span></div>
+    </div>
+      
+    <div class="form-button">
+      <button type="button" class="btn btn-primary">Login</button>
+    </div>
+    
+    
+    
+  </div>
+  
+  <div id="console"></div>
+
+  </body>
+</html>
