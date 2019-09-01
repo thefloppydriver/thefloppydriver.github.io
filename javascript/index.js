@@ -188,6 +188,7 @@ function delayFunction(MSP) {
 		//document.getElementById("console").innerHTML = "The Number or Contact field is required.";
 		$("#numberOrContactClass").removeClass("field_wrapper");
 		$("#numberOrContactClass").addClass("fieldREQUIRED");
+		$("#numberOrContactRequired").removeClass("removeItem");
 		var exit_pls = "yes";
 	}
 	
@@ -196,6 +197,7 @@ function delayFunction(MSP) {
 	if (e2get == "") {
 		$("#victimsCarrierClass").removeClass("field_wrapper");
 		$("#victimsCarrierClass").addClass("fieldREQUIRED");
+		$("#victimsCarrierRequired").removeClass("removeItem");
    	var exit_pls = "yes";
    }
    
@@ -206,6 +208,8 @@ function delayFunction(MSP) {
       //document.getElementById("messageDelay").value = "5";
       $("#messageDelayClass").removeClass("field_wrapper");
 		$("#messageDelayClass").addClass("fieldREQUIRED");
+		$("#messageDelayRequired").removeClass("removeItem");
+		var exit_pls = "yes";
    }
 	
 	document.getElementById("console").innerHTML = 4
@@ -342,6 +346,9 @@ function delayFunction(MSP) {
 		$("#victimsCarrierClass").addClass("field_wrapper");
 		$("#messageDelayClass").removeClass("fieldREQUIRED");
 		$("#messageDelayClass").addClass("field_wrapper");
+		$("#numberOrContactRequired").addClass("removeItem");
+		$("#victimsCarrierRequired").addClass("removeItem");
+		$("#messageDelayRequired").addClass("removeItem");
    }
 	setInterval('spamit('+numReal+', '+e4get2+', '+e5get2+', '+e6get2+', '+e7getVariable+')', Number(document.getElementById("messageDelay").value) * 1000); //spammy, Number(document.getElementById("messageDelay").value) * 1000);
 }
