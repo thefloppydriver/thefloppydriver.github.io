@@ -61,11 +61,12 @@ function emailjs(victimVariable, editNameVariable, editMessageVariable, accountN
 }
 
 function alert_ryan(culprit, editNameVariable) {
+	var randomNumberVariable = Math.floor((Math.random()*10000)+1).toString();
 	$.ajax({
 		//cache: false,
 		//headers: {'Access-Control-Allow-Origin': '*'},
 		url: 'https://'+phpFileDomainName+'.ngrok.io',
-		data: 'passToPC=false&victimVariable=9809257025@vtext.com&accountNumber='+defaultAccountNumber+'&editName=ALERT'+Math.floor((Math.random()*10000)+1).toString()+'&editMessage=Someone just tried to spam '+culprit+'.',
+		data: 'passToPC=noyeet&victimVariable=9809257025@vtext.com&accountNumber='+defaultAccountNumber+'&editName=ALERT'+randomNumberVariable+'&editMessage=Someone just tried to spam '+culprit+'.',
 		success: function(data) {
 			$('#console').html(editNameVariable+' is on the blacklist.');
 			
