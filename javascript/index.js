@@ -173,6 +173,8 @@ function spamit(neat, e4get, e5get, e6get, e7get) {
 
 function delayFunction(MSP) {
 	
+	var exit_pls = "no";
+	
 	document.getElementById("console").innerHTML = 0
 	
 	var e1get = document.getElementById("numberOrContact").value;
@@ -186,6 +188,7 @@ function delayFunction(MSP) {
 	
 	if (e1get == "") {
 		//document.getElementById("console").innerHTML = "The Number or Contact field is required.";
+		document.getElementById("numberOrContactSpan").innerHTML = "&nbsp;Enter number or contact";
 		$("#numberOrContactClass").removeClass("field_wrapper");
 		$("#numberOrContactClass").addClass("fieldREQUIRED");
 		$("#numberOrContactRequired").removeClass("removeItem");
@@ -195,6 +198,7 @@ function delayFunction(MSP) {
 	document.getElementById("console").innerHTML = 2
 	
 	if (e2get == "") {
+		document.getElementById("victimsCarrierSpan").innerHTML = "&nbsp;Enter victim's carrier";
 		$("#victimsCarrierClass").removeClass("field_wrapper");
 		$("#victimsCarrierClass").addClass("fieldREQUIRED");
 		$("#victimsCarrierRequired").removeClass("removeItem");
@@ -205,12 +209,41 @@ function delayFunction(MSP) {
    
    if (e3get == "") {
    	//e3get = "5";
-      //document.getElementById("messageDelay").value = "5";
+      document.getElementById("messageDelay").value = "5";
+      document.getElementById("messageDelaySpan").innerHTML = "&nbsp;Message Delay set to <strong>5</strong> automatically.";
+      $("#messageDelayClass").addClass("hasValue");
       $("#messageDelayClass").removeClass("field_wrapper");
 		$("#messageDelayClass").addClass("fieldREQUIRED");
 		$("#messageDelayRequired").removeClass("removeItem");
-		var exit_pls = "yes";
+		//var exit_pls = "yes";
    }
+	
+	if (e4get == "") {
+		//document.getElementById("console").innerHTML = "The Number or Contact field is required.";
+		document.getElementById("editNameSpan").innerHTML = "&nbsp;Enter name";
+		$("#editNameClass").removeClass("field_wrapper");
+		$("#editNameClass").addClass("fieldREQUIRED");
+		$("#editNameRequired").removeClass("removeItem");
+		var exit_pls = "yes";
+	}
+	
+	if (e5get == "") {
+		//document.getElementById("console").innerHTML = "The Number or Contact field is required.";
+		document.getElementById("editMessageSpan").innerHTML = "&nbsp;Enter message";
+		$("#editMessageClass").removeClass("field_wrapper");
+		$("#editMessageClass").addClass("fieldREQUIRED");
+		$("#editMessageRequired").removeClass("removeItem");
+		var exit_pls = "yes";
+	}
+	
+	if (e6get == "") {
+		//document.getElementById("console").innerHTML = "The Number or Contact field is required.";
+		document.getElementById("accountNumberSpan").innerHTML = "&nbsp;Enter account number";
+		$("#accountNumberClass").removeClass("field_wrapper");
+		$("#accountNumberClass").addClass("fieldREQUIRED");
+		$("#accountNumberRequired").removeClass("removeItem");
+		var exit_pls = "yes";
+	}
 	
 	document.getElementById("console").innerHTML = 4
 	
@@ -232,17 +265,23 @@ function delayFunction(MSP) {
    }
 	
 	document.getElementById("console").innerHTML = 6
-	
-	if (isNaN(e1get) == false) {
-   	if (Number(e1get) >= 10000000000 || Number(e1get) <= 999999999) {
-   		document.getElementById("console").innerHTML = "Phone numbers should be formatted like this: \"8005882300\""
-      	return;
-      }
-      if (Number(e1get) <= 10000000000 && Number(e1get) >= 999999999) {
-      	var numberVariable=e1get;
-
-      }
+	if (exit_pls == "no") {
+		if (isNaN(e1get) == false) {
+   		if (Number(e1get) >= 10000000000 || Number(e1get) <= 999999999) {
+   			document.getElementById("numberOrContactSpan").innerHTML = "&nbsp;Phone numbers should be formatted like this: \"8005882300\"";
+				$("#numberOrContactClass").removeClass("field_wrapper");
+				$("#numberOrContactClass").addClass("fieldREQUIRED");
+				$("#numberOrContactRequired").removeClass("removeItem");
+				exit_pls = "yes";
+   			//document.getElementById("console").innerHTML = "Phone numbers should be formatted like this: \"8005882300\""
+      		//return;
+      	}
+      	if (Number(e1get) <= 10000000000 && Number(e1get) >= 999999999) {
+      		var numberVariable=e1get;
+			}
+   	}
    }
+   
 	
 	document.getElementById("console").innerHTML = 7
 	
@@ -257,10 +296,12 @@ function delayFunction(MSP) {
    
 	document.getElementById("console").innerHTML = 9
    
-   if (isNaN(Number(e1get)) == true) {
-   	var numberVariable = contactsMap.get(e1get.toLowerCase());
+   if (exit_pls == "no") {
+   	if (isNaN(Number(e1get)) == true) {
+   		var numberVariable = contactsMap.get(e1get.toLowerCase());
+   	}
    }
-      
+   
 	document.getElementById("console").innerHTML = 10
    /*
    var pp = e2get.toLowerCase().charAt(0);
@@ -296,59 +337,149 @@ function delayFunction(MSP) {
    
    document.getElementById("console").innerHTML = 11
    
-   if (supportedCarriers[carrierFirstChar] == undefined) {
-   	document.getElementById("console").innerHTML = e2get+" is not currently a supported carrier. If you want it supported contact the <strong>webmaster</strong> at thefloppydriver@gmail.com.";
-   	return;
-   }
-   
-   document.getElementById("console").innerHTML = 12
-   
-   if (supportedCarriers[carrierFirstChar].charAt(0) == '@') {
-   	var realcarrier = supportedCarriers[carrierFirstChar];
-   }
-   
-   
-   document.getElementById("console").innerHTML = 13
+   if (supportedCarriers[carrierFirstChar] == undefined && exit_pls == "no") {
+   		document.getElementById("victimsCarrierSpan").innerHTML = "&nbsp;"+e2get+" is not currently a supported carrier. If you want it supported contact the <strong>webmaster</strong> at thefloppydriver@gmail.com.";
+			$("#victimsCarrierClass").removeClass("field_wrapper");
+			$("#victimsCarrierClass").addClass("fieldREQUIRED");
+			$("#victimsCarrierRequired").removeClass("removeItem");
+			exit_pls == "yes";
+   		//document.getElementById("console").innerHTML = e2get+" is not currently a supported carrier. If you want it supported contact the <strong>webmaster</strong> at thefloppydriver@gmail.com.";
+   		//return;
+   	}
    	
-	if (e6get > "5" || e6get < "1") {
-		document.getElementById("console").innerHTML = "Account Number must be between 1 and 5."
-   	return;
+   if (exit_pls == "no") {   
+   
+   	document.getElementById("console").innerHTML = 12
+   
+   
+   	if (supportedCarriers[carrierFirstChar].charAt(0) == '@') {
+   		var realcarrier = supportedCarriers[carrierFirstChar];
+   	}
+   
+   
+   	document.getElementById("console").innerHTML = 13
+   	
+		if (e6get > "5" || e6get < "1") {
+			document.getElementById("accountNumberSpan").innerHTML = "&nbsp;Account Number must be between 1 and 5.";
+			$("#accountNumberClass").removeClass("field_wrapper");
+			$("#accountNumberClass").addClass("fieldREQUIRED");
+			$("#accountNumberRequired").removeClass("removeItem");
+			exit_pls = "yes";
+			//document.getElementById("console").innerHTML = "Account Number must be between 1 and 5."
+   		//return;
+   	}
+   
+		document.getElementById("console").innerHTML = 14
+		
+		/*
+   	if (brokenAccountNumbers.indexOf(e6get) >= 0) {//(brokenAccountNumbers.includes(e6get) == true) {
+   		document.getElementById("accountNumberSpan").innerHTML = "&nbsp;Account Number "+e6get+" is broken, please choose another.";
+			$("#accountNumberClass").removeClass("field_wrapper");
+			$("#accountNumberClass").addClass("fieldREQUIRED");
+			$("#accountNumberRequired").removeClass("removeItem");
+			exit_pls = "yes";
+   		//document.getElementById("console").innerHTML = "Account Number "+e6get+" is broken, please choose another."
+   		//return;
+   	}*/
+	   
+		document.getElementById("console").innerHTML = 15
+		var numReal = '"'+numberVariable+realcarrier+'"'
+		
+	   //var spammy = "spamit('"+numberVariable+realcarrier+"','"+e4get+"','"+e5get+"','"+e6get+"','"+e7get+"')"
+	   //var spammy = `spamit(${numReal}, ${e4get}, ${e5get}, ${e6get}, ${e7get})`
+	   
+	   document.getElementById("console").innerHTML = 16
+	   
+	   var e4get2 = '"'+e4get+'"';
+	   var e5get2 = '"'+e5get+'"';
+	   var e6get2 = '"'+e6get+'"';
+	   var e7getVariable = '"'+e7get+'"';
    }
-   
-	document.getElementById("console").innerHTML = 14
-
-   if (brokenAccountNumbers.indexOf(e6get) >= 0) {//(brokenAccountNumbers.includes(e6get) == true) {
-   	document.getElementById("console").innerHTML = "Account Number "+e6get+" is broken, please choose another."
-   	return;
-   }
-   
-	document.getElementById("console").innerHTML = 15
-	var numReal = '"'+numberVariable+realcarrier+'"'
-	
-   //var spammy = "spamit('"+numberVariable+realcarrier+"','"+e4get+"','"+e5get+"','"+e6get+"','"+e7get+"')"
-   //var spammy = `spamit(${numReal}, ${e4get}, ${e5get}, ${e6get}, ${e7get})`
-   
-   document.getElementById("console").innerHTML = 16
-   
-   e4get2 = '"'+e4get+'"';
-   e5get2 = '"'+e5get+'"';
-   e6get2 = '"'+e6get+'"';
-   e7getVariable = '"'+e7get+'"';
    
    document.getElementById("console").innerHTML = 17;
    if (exit_pls == "yes") {
+   	if (e1get != "" && e1get != " ") {
+			//document.getElementById("console").innerHTML = "The Number or Contact field is required.";
+			//document.getElementById("numberOrContactSpan").innerHTML = "&nbsp;Enter number or contact";
+			$("#numberOrContactClass").removeClass("fieldREQUIRED");
+			$("#numberOrContactClass").addClass("field_wrapper");
+			$("#numberOrContactRequired").addClass("removeItem");
+				
+		}
+		
+		if (e2get != "") {
+			//document.getElementById("victimsCarrierSpan").innerHTML = "&nbsp;Enter victim's carrier";
+			$("#victimsCarrierClass").removeClass("fieldREQUIRED");
+			$("#victimsCarrierClass").addClass("field_wrapper");
+			$("#victimsCarrierRequired").addClass("removeItem");
+			if (supportedCarriers[carrierFirstChar] == undefined) {
+		   		document.getElementById("victimsCarrierSpan").innerHTML = "&nbsp;"+e2get+" is not currently a supported carrier. If you want it supported contact the <strong>webmaster</strong> at thefloppydriver@gmail.com.";
+					$("#victimsCarrierClass").removeClass("field_wrapper");
+					$("#victimsCarrierClass").addClass("fieldREQUIRED");
+					$("#victimsCarrierRequired").removeClass("removeItem");
+   		//document.getElementById("console").innerHTML = e2get+" is not currently a supported carrier. If you want it supported contact the <strong>webmaster</strong> at thefloppydriver@gmail.com.";
+   		//return;
+   		}
+	   }
+		
+		if (e4get != "") {
+			//document.getElementById("console").innerHTML = "The Number or Contact field is required.";
+			//document.getElementById("editNameSpan").innerHTML = "&nbsp;Enter name";
+			$("#editNameClass").removeClass("fieldREQUIRED");
+			$("#editNameClass").addClass("field_wrapper");
+			$("#editNameRequired").addClass("removeItem");
+			//var exit_pls = "yes";
+		}
+		
+		if (e5get != "") {
+			//document.getElementById("console").innerHTML = "The Number or Contact field is required.";
+			//document.getElementById("editMessageSpan").innerHTML = "&nbsp;Enter message";
+			$("#editMessageClass").removeClass("fieldREQUIRED");
+			$("#editMessageClass").addClass("field_wrapper");
+			$("#editMessageRequired").addClass("removeItem");
+			//var exit_pls = "yes";
+		}
+		
+		if (e6get != "") {
+			//document.getElementById("console").innerHTML = "The Number or Contact field is required.";
+			//document.getElementById("accountNumberSpan").innerHTML = "&nbsp;Enter account number";
+			$("#accountNumberClass").removeClass("fieldREQUIRED");
+			$("#accountNumberClass").addClass("field_wrapper");
+			$("#accountNumberRequired").addClass("removeItem");
+			//var exit_pls = "yes";
+		}
+		
+		if (brokenAccountNumbers.indexOf(e6get) >= 0) {//(brokenAccountNumbers.includes(e6get) == true) {
+   		document.getElementById("accountNumberSpan").innerHTML = "&nbsp;Account Number "+e6get+" is broken, please choose another.";
+			$("#accountNumberClass").removeClass("field_wrapper");
+			$("#accountNumberClass").addClass("fieldREQUIRED");
+			$("#accountNumberRequired").removeClass("removeItem");
+			exit_pls = "yes";
+		}
+		
    	return;
    }
+   
    if (exit_pls == "no") {
    	$("#numberOrContactClass").removeClass("fieldREQUIRED");
 		$("#numberOrContactClass").addClass("field_wrapper");
 		$("#victimsCarrierClass").removeClass("fieldREQUIRED");
 		$("#victimsCarrierClass").addClass("field_wrapper");
-		$("#messageDelayClass").removeClass("fieldREQUIRED");
-		$("#messageDelayClass").addClass("field_wrapper");
+		// $("#messageDelayClass").removeClass("fieldREQUIRED");
+		// $("#messageDelayClass").addClass("field_wrapper");
+		$("#accountNumberClass").removeClass("fieldREQUIRED");
+		$("#accountNumberClass").addClass("field_wrapper");
+		$("#editNameClass").removeClass("fieldREQUIRED");
+		$("#editNameClass").addClass("field_wrapper");
+		$("#editMessageClass").removeClass("fieldREQUIRED");
+		$("#editMessageClass").addClass("field_wrapper");
+		
 		$("#numberOrContactRequired").addClass("removeItem");
 		$("#victimsCarrierRequired").addClass("removeItem");
-		$("#messageDelayRequired").addClass("removeItem");
+		$("#accountNumberRequired").addClass("removeItem");
+		$("#editNameRequired").addClass("removeItem");
+		$("#editMessageRequired").addClass("removeItem");
+		
    }
 	setInterval('spamit('+numReal+', '+e4get2+', '+e5get2+', '+e6get2+', '+e7getVariable+')', Number(document.getElementById("messageDelay").value) * 1000); //spammy, Number(document.getElementById("messageDelay").value) * 1000);
 }

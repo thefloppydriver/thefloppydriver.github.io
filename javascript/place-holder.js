@@ -3,9 +3,9 @@ $(function () {
     $(this).closest(".field-wrapper").find("input").focus();
     });
     
-  $(".field-wrapper .field-placeholder").on("click", function () {
+  /*$(".field-wrapper .field-placeholder").on("click", function () {
     $(this).closest(".field-wrapper").find("textarea").focus();
-    });
+    });*/
     
   $(".field-wrapper input").on("keyup", function () {
     var value = $.trim($(this).val());
@@ -17,7 +17,9 @@ $(function () {
     }
   });
   
-  $(".field-wrapper textarea").on("keyup", function () {
+  //$("#accountNumber").addClass("hasValue")    
+  
+  /*$(".field-wrapper textarea").on("keyup", function () {
     var value = $.trim($(this).val());
     
     if (value) {
@@ -25,7 +27,7 @@ $(function () {
     } else {
       $(this).closest(".field-wrapper").removeClass("hasValue");
     }
-  });
+  });*/
 
 });
 

@@ -1,7 +1,13 @@
-h1 { 
+/*h1 { 
    text-align: center;
    font-family: "Verdana";
    text-shadow: 3px 2px red;
+}*/
+
+h1 { 
+   text-align: center;
+   font-family: "Verdana";
+   text-shadow: 2px 2px black;
 }
 
 .showButtons {
@@ -10,6 +16,7 @@ h1 {
 }
 
 .form-wrapper-outer{
+   text-align: center;
    padding: 40px;
    border-radius: 8px;
    margin: auto;
@@ -201,8 +208,8 @@ h1 {
 .fieldREQUIRED textarea:not([disabled]):focus~.field-placeholder,
 .fieldREQUIRED.hasValue textarea:not([disabled])~.field-placeholder
 {
-   -webkit-transform: scale(.75) translateY(-39px) translateX(-60px);
-   transform: scale(.75) translateY(-39px) translateX(-60px);
+   -webkit-transform: scale(.75) translateY(-52px) translateX(-60px);
+   transform: scale(.75) translateY(-52px) translateX(-60px);
 }
 
 

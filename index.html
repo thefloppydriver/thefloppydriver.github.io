@@ -33,7 +33,7 @@
   
   <body>
 
-	<h1><br>bradJS</h2>
+	<a href="legacy/index.html" style="color: red; text-decoration: none;"><h1><br>bradJS</h1></a>
   
   
   
@@ -70,7 +70,7 @@
     </div>
     
     <div class="form-greeting">
-      <span>It's nice to see you.</span>
+      <span id="form-greetingSpan">It's nice to see you.</span>
     </div>
 
 
@@ -87,7 +87,7 @@
           <path d="M0 0h24v24H0z" fill="none"></path>
         </svg>
         
-        <span>&nbsp;Enter number or contact</span>
+        <span id="numberOrContactSpan">&nbsp;Enter number or contact</span>
         <br></br>
         
         
@@ -108,7 +108,7 @@
           <path d="M0 0h24v24H0z" fill="none"></path>
         </svg>
         
-        <span>&nbsp;Enter victim's carrier</span>
+        <span id="victimsCarrierSpan">&nbsp;Enter victim's carrier</span>
         <br></br>
         
         
@@ -129,7 +129,7 @@
           <path d="M0 0h24v24H0z" fill="none"></path>
         </svg>
         
-        <span>&nbsp;Enter message delay</span>
+        <span id="messageDelaySpan">&nbsp;Enter message delay</span>
         <br></br>
         
         
@@ -139,7 +139,7 @@
     
     
     <div class="field-wrapper">
-      <div class="field-wrapper" id="accountNumberClass">
+      <div class="field-wrapper hasValue" id="accountNumberClass">
         <input type="number" name="accountNumber" id="accountNumber" min="1" max="5" value="2">
         <div class="field-placeholder"><span>Account Number</span></div>
       </div>
@@ -150,7 +150,7 @@
           <path d="M0 0h24v24H0z" fill="none"></path>
         </svg>
         
-        <span>&nbsp;Enter account number</span>
+        <span id="accountNumberSpan">&nbsp;Enter account number</span>
         <br></br>
         
         
@@ -171,7 +171,7 @@
           <path d="M0 0h24v24H0z" fill="none"></path>
         </svg>
         
-        <span>&nbsp;Enter name</span>
+        <span id="editNameSpan">&nbsp;Enter name</span>
         <br></br>
         
         
@@ -192,7 +192,7 @@
           <path d="M0 0h24v24H0z" fill="none"></path>
         </svg>
         
-        <span>&nbsp;Enter message</span>
+        <span id="editMessageSpan">&nbsp;Enter message</span>
         <br></br>
         
         
@@ -208,7 +208,7 @@
     <!--<p>MSP (Beta): <input type="checkbox" id="MSP"></p>-->
     
     <div class="form-button">
-    <button type="button" class="btn btn-success" onclick="delayFunction('yes')">Spam! (MSP)</button>
+      <button type="button" class="btn btn-success" onclick="delayFunction('yes')">Spam! (MSP)</button>
       <button type="button" class="btn btn-success" onclick="delayFunction('no')">Spam!</button>
     </div>
     
