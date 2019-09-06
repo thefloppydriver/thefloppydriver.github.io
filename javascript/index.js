@@ -84,11 +84,11 @@ function spamit(neat, e4get, e5get, e6get, e7get) {
 			if (e7get == "true") {
 				var e7get2 = Math.random(); // >= 0.5; //var e7get2 = (Math.random() >= 0.5).toString();
 				
-				if (e7get2 <= 0.25 {//== "true") {
+				if (e7get2 <= 0.25) {//== "true") {
          		var e7get3 = "yeet0";//"yeet";
          	}
          	
-         	if (e7get2 > 0.25 && e7get2 <= 0.5) //"false") {
+         	if (e7get2 > 0.25 && e7get2 <= 0.5) {//"false") {
          		var e7get3 = "yeet0W";//noyeet";
          	}
          	
