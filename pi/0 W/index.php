@@ -6,9 +6,9 @@ header('Access-Control-Allow-Headers:Access-Control-Allow-Headers,Origin,Accept,
    use PHPMailer\PHPMailer\PHPMailer;
    use PHPMailer\PHPMailer\Exception;
    
-   require 'D:\composer\vendor\autoload.php';
+   require '/home/pi/vendor/autoload.php';
    
-   $account = array("fearmypowergoodsiralt2@gmail.com", "sp4m.m3!alt"); //PC account, the pi zero account is "fearmypowergoodsiraltzero@gmail.com" and the password is "sp4m.m3!altzero"
+   $account = array("fearmypowergoodsiralt@gmail.com", "sp4m.m3!alt"); //pi zero w account, the pi zero account is "fearmypowergoodsiraltzero@gmail.com" and the password is "sp4m.m3!altzero"
    $mail = new PHPMailer(true);
    
    $victimVariable = $_GET['victimVariable'];

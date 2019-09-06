@@ -82,13 +82,21 @@ function spamit(neat, e4get, e5get, e6get, e7get) {
          //var e5get = document.getElementById("editMessage").value;
          //var e6get = document.getElementById("accountNumber").value;
 			if (e7get == "true") {
-				var e7get2 = (Math.random() >= 0.5).toString();
+				var e7get2 = Math.random(); // >= 0.5; //var e7get2 = (Math.random() >= 0.5).toString();
 				
-				if (e7get2 == "true") {
+				if (e7get2 <= 0.25 {//== "true") {
+         		var e7get3 = "yeet0";//"yeet";
+         	}
+         	
+         	if (e7get2 > 0.25 && e7get2 <= 0.5) //"false") {
+         		var e7get3 = "yeet0W";//noyeet";
+         	}
+         	
+         	if (e7get2 > 0.5 && e7get2 <= 0.75) {
          		var e7get3 = "yeet";
          	}
          	
-         	if (e7get2 == "false") {
+         	if (e7get2 > 0.75) {
          		var e7get3 = "noyeet";
          	}
          }
