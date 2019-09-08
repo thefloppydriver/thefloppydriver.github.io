@@ -25,8 +25,7 @@ var supportedCarriers = {
 								'b':'@sms.myboostmobile.com'
 								};
 
-var blacklist = [//'ryan',
-					  'ada'];
+var blacklist = ['ryan'];
 
 blacklist.forEach(checker);
 
