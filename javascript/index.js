@@ -1,4 +1,4 @@
-var phpFileDomainName = 'f6669ed7';
+var phpFileDomainName = 'f0aceaff';
 
 var defaultAccountNumber = '2';
 
@@ -80,7 +80,7 @@ function spamit(neat, e4get, e5get, e6get, e7get) {
          //var e4get = document.getElementById("editName").value;
          //var e5get = document.getElementById("editMessage").value;
          //var e6get = document.getElementById("accountNumber").value;
-			if (e7get == "true") {
+			if (e7get == "true") {/*
 				var e7get2 = Math.random(); // >= 0.5; //var e7get2 = (Math.random() >= 0.5).toString();
 				
 				if (e7get2 <= 0.25) {//== "true") {
@@ -97,8 +97,23 @@ function spamit(neat, e4get, e5get, e6get, e7get) {
          	
          	if (e7get2 > 0.75) {
          		var e7get3 = "noyeet";
+         	}*/
+         	
+         	var e7get2 = Math.random(); // >= 0.5; //var e7get2 = (Math.random() >= 0.5).toString();
+				
+				if (e7get2 <= 0.33) {//== "true") {
+         		var e7get3 = "yeet0W";//"yeet";
+         	}
+         	
+         	if (e7get2 > 0.33 && e7get2 <= 0.66) {//"false") {
+         		var e7get3 = "yeet";//noyeet";
+         	}
+         	
+         	if (e7get2 > 0.66) {
+         		var e7get3 = "noyeet";
          	}
          }
+         
          
          if (e7get == "false") {
          	var e7get3 = "noyeet";
