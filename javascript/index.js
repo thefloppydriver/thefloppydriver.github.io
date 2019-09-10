@@ -1,4 +1,4 @@
-var phpFileDomainName = '30767013';
+var phpFileDomainName = 'f6669ed7';
 
 var defaultAccountNumber = '2';
 
@@ -25,7 +25,7 @@ var supportedCarriers = {
 								'b':'@sms.myboostmobile.com'
 								};
 
-var blacklist = ['ryan'];
+var blacklist = ['kylee'];
 
 blacklist.forEach(checker);
 

