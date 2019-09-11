@@ -240,7 +240,7 @@ function delayFunction(MSP) {
    
 	document.getElementById("console").innerHTML = 3
    
-   if (e3get == "") {
+   if (e3get == "" || e3get.charAt(0) == " " && MSP == "no") {
    	//e3get = "5";
       document.getElementById("messageDelay").value = "5";
       document.getElementById("messageDelaySpan").innerHTML = "&nbsp;Message Delay set to <strong>5</strong> automatically.";
@@ -251,7 +251,18 @@ function delayFunction(MSP) {
 		//var exit_pls = "yes";
    }
    
-   if (e3get < 5 && MSP == "no") {
+   if (e3get == "" || e3get.charAt(0) == " " && MSP == "yes") {
+   	//e3get = "5";
+      document.getElementById("messageDelay").value = "2";
+      document.getElementById("messageDelaySpan").innerHTML = "&nbsp;Message Delay set to <strong>2</strong> automatically.";
+      $("#messageDelayClass").addClass("hasValue");
+      $("#messageDelayClass").removeClass("field_wrapper");
+		$("#messageDelayClass").addClass("fieldREQUIRED");
+		$("#messageDelayRequired").removeClass("removeItem");
+		//var exit_pls = "yes";
+   }
+   
+   if (e3get < 5 && e3get >= 2 && MSP == "no") {
    	//e3get = "5";
       //document.getElementById("messageDelay").value = "5";
       document.getElementById("messageDelaySpan").innerHTML = "&nbsp;Message Delay cannot be below <strong>5</strong> without MSP.";
@@ -263,7 +274,7 @@ function delayFunction(MSP) {
 		var exit_pls = "yes";
    }
    
-   if (e3get < 2 && MSP == "yes") {
+   if (e3get < 2) {// && MSP == "yes") {
    	//e3get = "5";
       //document.getElementById("messageDelay").value = "5";
       document.getElementById("messageDelaySpan").innerHTML = "&nbsp;Message Delay cannot be below <strong>2</strong> (unless you want to donate $20 for me to get another server :])";
@@ -522,7 +533,7 @@ function delayFunction(MSP) {
 		
 		
 		
-		if (e3get >= 5 && MSP == "no") {
+		if (e3get >= 5 && MSP == "no" && e3get != "" && e3get.charAt(0) != " ") {
 			$("#messageDelayClass").removeClass("fieldREQUIRED");
 			$("#messageDelayClass").addClass("field_wrapper");
 			$("#messageDelayRequired").addClass("removeItem");
