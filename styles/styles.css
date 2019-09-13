@@ -41,6 +41,11 @@ h1 {
    text-align: right;
 }
 
+.cpu-temps{
+   text-align: left;
+   white-space: pre-wrap;
+}
+
 .btn-primary { 
    background: #68C454;
 }
