@@ -75,6 +75,9 @@ contactsMap.set('ryan', '9809257025');
 contactsMap.set('gracee', '8035041480');
 contactsMap.set('rene', '8036166880');
 contactsMap.set('ada', '7049890912');*/
+
+
+
 function call_temps(data) {
 	//temps = data;
 	var rpi3_1 = data.indexOf("a")+1;
@@ -93,13 +96,13 @@ function call_temps(data) {
 		console.log("1");
 	}
 
-	var pcServer_1 = data.indexOf("e")+1;
+	/*var pcServer_1 = data.indexOf("e")+1;
 	var pcServer_2 = data.indexOf("f");
 	console.log("pcServer_1: "+pcServer_1);
 	if (pcServer_1 != 0) {
 		var pcServer = data.slice(pcServer_1, pcServer_2);
 		console.log("1");
-	}
+	}*/
 
 	var cputemps_data = "";
 
@@ -126,14 +129,14 @@ function call_temps(data) {
 
 
 
-	if (pcServer_1 == 0) {
+	/*if (pcServer_1 == 0) {
 		cputemps_data = cputemps_data + "\nTFD-PC CPU: (Node is down for maintenance.) ";
 	}
-
+	
 	if (pcServer_1 != "0") {
 		cputemps_data = cputemps_data + "\nTFD-PC CPU: "+pcServer+" F ";
-	}
-
+	}*/
+	
 	document.getElementById("cputemps").innerHTML = cputemps_data;
 }
 
