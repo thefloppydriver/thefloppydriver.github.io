@@ -3,15 +3,15 @@ header('Access-Control-Allow-Origin:*');
 header('Access-Control-Allow-Credentials:true');
 header('Access-Control-Allow-Methods:GET,HEAD,OPTIONS,POST,PUT,PATCH,DELETE');
 header('Access-Control-Allow-Headers:Access-Control-Allow-Headers,X-Auth-Token,Origin,Accept,X-Requested-With,Content-Type,Access-Control-Request-Method,Access-Control-Request-Headers,cache-control,Access-Control-Allow-Origin');
-   
+
    use PHPMailer\PHPMailer\PHPMailer;
    use PHPMailer\PHPMailer\Exception;
    
    require '/home/pi/vendor/autoload.php';
    
-   $ngrokSubdomain0W = 'c5d288e6'; //that's the rpi zero w
+   $ngrokSubdomain0W = 'e07b5511'; //that's the rpi zero w
    $ngrokSubdomain0 = 'bf8929fb'; //that's the rpi zero
-   $ngrokSubdomainPC = '7eaa1a70'; //that's my PC
+   $ngrokSubdomainPC = 'bf8929fb'; //that's my PC
    
    
    $account = array("fearmypowergoodsir2@gmail.com", "sp4m.m3!2");
@@ -19,7 +19,7 @@ header('Access-Control-Allow-Headers:Access-Control-Allow-Headers,X-Auth-Token,O
    $mail = new PHPMailer(TRUE);
    
 
-   if ($_GET['passToPC'] == "yeet0W") { //that's the rpi zero w
+   if ($_GET['passToPC'] == "yeetZW") { //that's the rpi zero w
       $curl=curl_init();
       curl_setopt_array($curl, [
       CURLOPT_RETURNTRANSFER => 1,

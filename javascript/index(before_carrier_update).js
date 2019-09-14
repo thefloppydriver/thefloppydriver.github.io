@@ -14,41 +14,19 @@ var contactsMap = new Map([['jomar', '2163198688'],
                            ['rene', '8036166880'],
                            ['chloe','7042147602'],
                            ['alice', '8034934864'],
-                           ['maggie', '8038336657'],
                            ['ada', '7049890912']
                            ]);
 
 var supportedCarriers = {
-								've':'@vtext.com', //Verizon Wireless
-								't-':'@tmomail.net', //T-Mobile
-								'tm':'@tmomail.net', //TMobile
-								't ':'@tmomail.net', //T Mobile
-								'at':'@txt.att.net', //AT&T
-								'sp':'@messaging.sprintpcs.com', //Sprint
-								'me':'@mymetropcs.com', //MetroPCS
-								'bo':'@sms.myboostmobile.com', //Boost Mobile
-								'xf':'@vtext.com', //XFinity Mobile
-								'x-':'@vtext.com', //X-Finity Mobile
-								'x ':'@vtext.com', //X Finity Mobile
-								'cr':'@sms.cricketwireless.net', //Cricket Wireless
-								'co':'@mailmymobile.net', //Consumer Cellular
-								'c-':'@cspire1.com', //C-Spire
-								'c ':'@cspire1.com', //C Spire
-								'cs':'@cspire1.com', //CSpire
-								'go':'@msg.fi.google.com', //Google Fi
-								'pr':'@msg.fi.google.com', //Project Fi
-								'fi':'@msg.fi.google.com', //Fi
-								'pa':'@vtext.com', //Page Plus
-								're':'@text.republicwireless.com', //Republic Wireless
-								'u.':'@email.uscc.net', //U.S. Cellular
-								'u ':'@email.uscc.net', //U S Cellular
-								'us':'@email.uscc.net', //US Cellular
-								'tr':'@mmst5.tracfone.com', //Tracfone
-								'ti':'@message.ting.com', //Ting
-								'vi':'@vmobl.com' //Virgin Mobile
+								'v':'@vtext.com',
+								't':'@tmomail.net',
+								'a':'@txt.att.net',
+								's':'@messaging.sprintpcs.com',
+								'm':'@mymetropcs.com',
+								'b':'@sms.myboostmobile.com'
 								};
 
-var blacklist = ['ada'];
+var blacklist = ['kylee'];
 
 blacklist.forEach(blacklist_checker);
 
@@ -512,11 +490,11 @@ function delayFunction(MSP) {
    	return;
    }
    */
-   var carrierFirstAndSecondChars = e2get.toLowerCase().charAt(0)+e2get.toLowerCase().charAt(1);
+   var carrierFirstChar = e2get.toLowerCase().charAt(0);
    
    document.getElementById("console").innerHTML = 11
    
-   if (supportedCarriers[carrierFirstAndSecondChars] == undefined && exit_pls == "no") {
+   if (supportedCarriers[carrierFirstChar] == undefined && exit_pls == "no") {
    		document.getElementById("victimsCarrierSpan").innerHTML = "&nbsp;"+e2get+" is not currently a supported carrier. If you want it supported contact the <strong>webmaster</strong> at thefloppydriver@gmail.com.";
 			$("#victimsCarrierClass").removeClass("field_wrapper");
 			$("#victimsCarrierClass").addClass("fieldREQUIRED");
@@ -531,8 +509,8 @@ function delayFunction(MSP) {
    	document.getElementById("console").innerHTML = 12
    
    
-   	if (supportedCarriers[carrierFirstAndSecondChars].charAt(0) == '@') {
-   		var realcarrier = supportedCarriers[carrierFirstAndSecondChars];
+   	if (supportedCarriers[carrierFirstChar].charAt(0) == '@') {
+   		var realcarrier = supportedCarriers[carrierFirstChar];
    	}
    
    
