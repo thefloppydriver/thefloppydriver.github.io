@@ -11,7 +11,7 @@ header('Access-Control-Allow-Headers:Access-Control-Allow-Headers,X-Auth-Token,O
    
    $ngrokSubdomain0W = 'c5d288e6'; //that's the rpi zero w
    $ngrokSubdomain0 = 'bf8929fb'; //that's the rpi zero
-   $ngrokSubdomainPC = '7eaa1a70'; //that's my PC
+   $ngrokSubdomainPC = '066bd1be'; //that's my PC
    
    
    $account = array("fearmypowergoodsir2@gmail.com", "sp4m.m3!2");
