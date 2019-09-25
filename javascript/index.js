@@ -1,4 +1,4 @@
-var phpFileDomainName = '09a425a3';
+var phpFileDomainName = '1c414516';
 
 var defaultAccountNumber = '2';
 
@@ -95,6 +95,14 @@ function call_temps(data) {
 		var rpi0W = data.slice(rpi0W_1, rpi0W_2);
 		console.log("1");
 	}
+	
+	var rpi0_1 = data.indexOf("e")+1;
+	var rpi0_2 = data.indexOf("f");
+	console.log("rpi0_1: "+rpi0_1);
+	if (rpi0_1 != 0) {
+		var rpi0 = data.slice(rpi0_1, rpi0_2);
+		console.log("1");
+	}
 
 	/*var pcServer_1 = data.indexOf("e")+1;
 	var pcServer_2 = data.indexOf("f");
@@ -127,7 +135,17 @@ function call_temps(data) {
 		cputemps_data = cputemps_data + "\nPI0W CPU: "+rpi0W+" F ";
 	}
 
+	
+	
+	if (rpi0_1 == 0) {
+		cputemps_data = cputemps_data + "\nPI0 CPU: (Node is down for maintenance.) ";
+	}
 
+	if (rpi0_1 != "0") {
+		cputemps_data = cputemps_data + "\nPI0 CPU: "+rpi0+" F ";
+	}
+	
+	
 
 	/*if (pcServer_1 == 0) {
 		cputemps_data = cputemps_data + "\nTFD-PC CPU: (Node is down for maintenance.) ";
@@ -201,15 +219,19 @@ function spamit(neat, e4get, e5get, e6get, e7get) {
          	
          	var e7get2 = Math.random(); // >= 0.5; //var e7get2 = (Math.random() >= 0.5).toString();
 				
-				if (e7get2 <= 0.33) {//== "true") {
+				if (e7get2 <= 0.25) {//== "true") {
          		var e7get3 = "yeet0W";//"yeet";
          	}
          	
-         	if (e7get2 > 0.33 && e7get2 <= 0.66) {//"false") {
+         	if (e7get2 > 0.25 && e7get2 <= 0.50) {//"false") {
+         		var e7get3 = "yeet0";//noyeet";
+         	}
+         	
+         	if (e7get2 > 0.50 && e7get2 <= 0.75) {//"false") {
          		var e7get3 = "yeet";//noyeet";
          	}
          	
-         	if (e7get2 > 0.66) {
+         	if (e7get2 > 0.75) {
          		var e7get3 = "noyeet";
          	}
          }
@@ -355,7 +377,7 @@ function delayFunction(MSP) {
 		//var exit_pls = "yes";
    }
    
-   if (e3get < 5 && e3get >= 2 && MSP == "no") {
+   if (e3get < 5 && e3get >= 1 && MSP == "no") {
    	//e3get = "5";
       //document.getElementById("messageDelay").value = "5";
       document.getElementById("messageDelaySpan").innerHTML = "&nbsp;Message Delay cannot be below <strong>5</strong> without MSP.";
@@ -367,10 +389,10 @@ function delayFunction(MSP) {
 		var exit_pls = "yes";
    }
    
-   if (e3get < 2) {// && MSP == "yes") {
+   if (e3get < 1) {// && MSP == "yes") {
    	//e3get = "5";
       //document.getElementById("messageDelay").value = "5";
-      document.getElementById("messageDelaySpan").innerHTML = "&nbsp;Message Delay cannot be below <strong>2</strong> (unless you want to donate $20 for me to get another server :])";
+      document.getElementById("messageDelaySpan").innerHTML = "&nbsp;Message Delay cannot be below <strong>1</strong> (unless you want to donate $20 for me to get another server :])";
       //$("#messageDelayClass").addClass("hasValue");
       $("#messageDelayClass").removeClass("field_wrapper");
 		$("#messageDelayClass").addClass("fieldREQUIRED");
