@@ -1,4 +1,4 @@
-var phpFileDomainName = '1c414516';
+var phpFileDomainName = '9a5cf4c1';
 
 var defaultAccountNumber = '2';
 
@@ -122,7 +122,7 @@ function call_temps(data) {
 	}
 
 	if (rpi3_1 != "0") {
-		cputemps_data = "PI 3 CPU: "+rpi3+" F ";
+		cputemps_data = "PI 3 CPU: "+rpi3+"°F ";
 	}
 	
 
@@ -132,7 +132,7 @@ function call_temps(data) {
 	}
 
 	if (rpi0W_1 != "0") {
-		cputemps_data = cputemps_data + "\nPI0W CPU: "+rpi0W+" F ";
+		cputemps_data = cputemps_data + "\nPI0W CPU: "+rpi0W+"°F ";
 	}
 
 	
@@ -142,7 +142,7 @@ function call_temps(data) {
 	}
 
 	if (rpi0_1 != "0") {
-		cputemps_data = cputemps_data + "\nPI0 CPU: "+rpi0+" F ";
+		cputemps_data = cputemps_data + "\nPI0 CPU: "+rpi0+"°F ";
 	}
 	
 	
