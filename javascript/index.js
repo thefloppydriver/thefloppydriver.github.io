@@ -45,7 +45,8 @@ var supportedCarriers = {
 								'us':'@email.uscc.net', //US Cellular
 								'tr':'@mmst5.tracfone.com', //Tracfone
 								'ti':'@message.ting.com', //Ting
-								'vi':'@vmobl.com' //Virgin Mobile
+								'vi':'@vmobl.com', //Virgin Mobile
+								'te':'@textnow.me' //Text Now
 								};
 
 var blacklist = ['ada'];
