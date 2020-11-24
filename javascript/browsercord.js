@@ -149,7 +149,7 @@ SDP={
 }
 
 
-var api_endpoint = 'https://discordapp.com/api/';
+var api_endpoint = 'https://discordapp.com/api/v8/';
 
 navigator.getUserMedia = navigator.getUserMedia ||
 navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
