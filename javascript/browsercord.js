@@ -274,8 +274,8 @@ var discord = function (settings){
         get: function(callback) {
             if(localStorage.getItem('discord_gateway') == null){
                 Discord.get('/gateway', getHeaders(), function(data, xhr){
-                    localStorage.setItem('discord_gateway', data.url + "?v=5&encoding=json");
-                    callback(data.url + "?v=5&encoding=json");
+                    localStorage.setItem('discord_gateway', data.url + "?v=8&encoding=json");
+                    callback(data.url + "?v=8&encoding=json");
                 }, function(data, xhr){
                     error({source: 'Fetching Gateway', msg: data})
                 })
